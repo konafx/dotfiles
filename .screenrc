@@ -1,0 +1,11 @@
+# encoding
+defencoding utf-8
+
+# Don't show Startup Menu
+startup_message off
+
+# autodetach
+autodetach on
+
+# view statusline
+hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
