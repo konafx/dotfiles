@@ -78,7 +78,7 @@ $ '
 # ALIAS
 
 # ls
-alias ls-'ls -GF'
+alias ls-'ls -oF'
 alias la='ls -a'
 alias ll='ls -l'
 
