@@ -78,7 +78,7 @@ $ '
 # ALIAS
 
 # ls
-alias ls-'ls -oF'
+alias ls='ls -F --color'
 alias la='ls -a'
 alias ll='ls -l'
 
