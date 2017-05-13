@@ -1,5 +1,8 @@
 [user]
 	useConfigOnly = true
+	email = s1230030@u-aizu.ac.jp
+	name = kon
 
 [core]
 	excludesfile = ~/.gitignore
+	editor = vim

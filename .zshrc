@@ -1,38 +1,38 @@
-# --------------------
-# ZPLUG
-source ~/.zplug/init.zsh
-
-# Define plugins
-#zplug "zsh-users/zsh-history-substring-search"
+## --------------------
+## ZPLUG
+#source ~/.zplug/init.zsh
 #
-#zplug "mollifier/cd-gitroot"
-# リビジョンロック機能を持つ
-
-zplug "b4b4r07/enhancd"
-#zplug "mollifier/anyframe"
-
-## Gist ファイルもインストールできる
-##zplug "b4b4r07/79ee61f7c140c63d2786", \
-##	from:gist, \
-##	as:command, \
-##	use:get_last_pane_path.sh
+## Define plugins
+##zplug "zsh-users/zsh-history-substring-search"
 ##
-### bitbucket も
-##zplug "b4b4r07/hello_bitbucket", \
-##	from:bitbucket, \
-##	as:command, \
-##	use:"*.sh"
-
-# 未インストール項目をインストールする
-if ! zplug check --verbose; then
-	printf "Install? [y/N]: "
-	if read -q; then
-		echo; zplug install
-	fi
-fi
-
-zplug load --verbose
-
+##zplug "mollifier/cd-gitroot"
+## リビジョンロック機能を持つ
+#
+#zplug "b4b4r07/enhancd"
+##zplug "mollifier/anyframe"
+#
+### Gist ファイルもインストールできる
+###zplug "b4b4r07/79ee61f7c140c63d2786", \
+###	from:gist, \
+###	as:command, \
+###	use:get_last_pane_path.sh
+###
+#### bitbucket も
+###zplug "b4b4r07/hello_bitbucket", \
+###	from:bitbucket, \
+###	as:command, \
+###	use:"*.sh"
+#
+## 未インストール項目をインストールする
+#if ! zplug check --verbose; then
+#	printf "Install? [y/N]: "
+#	if read -q; then
+#		echo; zplug install
+#	fi
+#fi
+#
+#zplug load --verbose
+#
 # --------------------
 zstyle ':completion:*:default' menu select=2
 
@@ -40,7 +40,6 @@ zstyle ':completion:*:default' menu select=2
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -v
 # End of lines configured by zsh-newuser-install
 
 # cd by directory name
@@ -64,7 +63,7 @@ function chpwd() { ls }
 # --------------------
 # PATH
 # to ~/local/bin
-export PATH=${HOME}/local/bin:${PATH}
+export PATH=${HOME}/local/bin:${HOME}/.local/bin:${PATH}
 
 # --------------------
 # PROMPT

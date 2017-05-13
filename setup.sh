@@ -8,7 +8,8 @@ do
 done
 
 if [ ! -d ~/.zplug ]; then
-	curl -sL --proto-redir -all,https https://zplug.sh/installer | zsh
+	export ZPLUG_HOME=$HOME/.zplug
+	git clone https://github.com/zplug/zplug $ZPLUG_HOME
 fi
 if [ ! -d ~/.vim/bundles ]; then
 	curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
