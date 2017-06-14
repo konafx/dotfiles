@@ -1,11 +1,351 @@
-# encoding
-defencoding utf-8
+# Escape
+escape ^Aa
 
-# Don't show Startup Menu
+# Only: A (default)
+bind a only
+
+# source setup file
+bind t eval 'source ~/.screenrc' 'echo "source ~/.screenrc"'
+
+# Scroll back
+defscrollback 10000
+
+# Don't show start up message
 startup_message off
 
-# autodetach
+# Auto detach
 autodetach on
 
-# view statusline
-hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
+# Show action in the hidden window
+defmonitor on
+
+# hardcopydir
+hardcopydir $HOME/tmp
+
+# Time (second) to wait new message
+msgminwait 0
+
+# Time (second) to show message
+msgwait 5
+
+# For search
+ignorecase on
+
+# Disable flow control (C-s/C-q)
+defflow off
+
+# Remove background color
+#defbce "on"
+
+# kill
+bind K kill
+
+# Use bright color for the characters
+attrcolor b ".I"
+
+# Clear scrollback buffer
+bind F eval 'scrollback 0' 'scrollback 1000' 'echo "scrollback buffer cleared"'
+
+# Don't clear after finishing application
+#altscreen on
+
+# disable loginmode (if update /var/run/utmp)
+#deflogin on
+
+# verbose
+#verbose on
+
+# Modify window list
+bind w  windowlist -b
+#bind ^W windowlist -b
+#bind ^W windowlist -b -m # sorting by most-recentry-used list.
+##disable...
+#bind w 
+bind ^W
+
+# Clear display before detachment
+#bind d eval 'only' 'clear' 'detach'
+
+# Colors for other messages, including center line
+#sorendition "+rb .w"
+sorendition " .K"
+
+# Remove
+# x: default lockscreen
+bind x remove
+#bind X remove # Default
+
+# Continuous window change
+#bind ^n eval 'command -c window' 'next'
+#bind ^p eval 'command -c window' 'prev'
+bind ^n eval 'next'
+bind ^p eval 'prev'
+bind -c window n eval 'next'
+bind -c window p eval 'prev'
+bind -c window ^n eval 'command -c window' 'next'
+bind -c window ^p eval 'command -c window' 'prev'
+bind -c window ^q eval 'command -c window'
+
+# Focus (like vi)
+bind h  eval    'focus left'
+bind j  eval    'focus down'
+bind k  eval    'focus up'
+bind l  eval    'focus right'
+bind ^h eval    'focus left'
+bind -k kb eval 'focus left' #Backspace
+#bind \015  eval 'focus down' #Enter
+bind ^j eval    'focus down'
+bind ^k eval    'focus up'
+bind ^l eval    'focus right'
+
+#bind ^h eval    'command -c move' 'focus left'
+#bind -k kb eval 'command -c move' 'focus left' #Backspace
+#bind ^j eval    'command -c move' 'focus down'
+#bind ^k eval    'command -c move' 'focus up'
+#bind ^l eval    'command -c move' 'focus right'
+#bind ^q eval    'command -c move'
+
+#bind -c move h eval     'focus left'
+#bind -c move j eval     'focus down'
+#bind -c move k eval     'focus up'
+#bind -c move l eval     'focus right'
+#bind -c move ^h eval    'command -c move' 'focus left'
+#bind -c move -k kb eval 'command -c move' 'focus left' #Backspace
+#bind -c move ^j eval    'command -c move' 'focus down'
+#bind -c move ^k eval    'command -c move' 'focus up'
+#bind -c move ^l eval    'command -c move' 'focus right'
+#bind -c move ^q eval    'command -c move'
+
+# Split
+bind v split -v
+bind V split -v
+bind ^v split -v
+bind s split
+#bind S split # default
+bind ^s split
+
+# Layout
+## Layout command prefix C-q
+bind ^q eval 'command -c layout' 'layout show'
+bind -c layout ^q eval 'command -c layout' 'layout show'
+
+# Make/Remove layout
+bind -c layout c eval 'command -c layout' 'layout new' 'layout show'
+bind -c layout x eval 'command -c layout' 'layout remove' 'layout show'
+
+# Modify title/number
+bind -c layout T colon 'layout title '
+bind -c layout N colon 'layout number '
+
+# Go to Next/Previous layout
+bind -c layout n eval 'layout next' 'layout show'
+bind -c layout p eval 'layout prev' 'layout show'
+bind -c layout ^N eval 'command -c layout' 'layout next' 'layout show'
+bind -c layout ^P eval 'command -c layout' 'layout prev' 'layout show'
+
+# Choose n-th layout
+bind -c layout 0 eval 'command -c layout' 'layout select 0' 'layout show'
+bind -c layout 1 eval 'command -c layout' 'layout select 1' 'layout show'
+bind -c layout 2 eval 'command -c layout' 'layout select 2' 'layout show'
+bind -c layout 3 eval 'command -c layout' 'layout select 3' 'layout show'
+bind -c layout 4 eval 'command -c layout' 'layout select 4' 'layout show'
+bind -c layout 5 eval 'command -c layout' 'layout select 5' 'layout show'
+bind -c layout 6 eval 'command -c layout' 'layout select 6' 'layout show'
+bind -c layout 7 eval 'command -c layout' 'layout select 7' 'layout show'
+bind -c layout 8 eval 'command -c layout' 'layout select 8' 'layout show'
+bind -c layout 9 eval 'command -c layout' 'layout select 9' 'layout show'
+
+# Initialize layouts
+bind -c layout i eval 'screen' 'screen' 'screen' 'source $HOME/.screen/all.layout'
+bind -c layout ^i eval 'screen' 'screen' 'screen' 'source $HOME/.screen/all.layout'
+
+# Reset layouts
+bind -c layout r eval 'source $HOME/.screen/all.layout'
+bind -c layout ^r eval 'source $HOME/.screen/all.layout'
+
+# Set layout
+bind -c layout m eval 'command -c layoutm' 'echo "0 only, l 4-windows, 2 3-win_1-top, 3 3-win_1-top, 4 monitor (1 top, 3 small bottoms), 5 split, 6 vsplit, "'
+bind -c layoutm 0 eval 'source $HOME/.screen/only.layout'
+bind -c layoutm 1 eval 'source $HOME/.screen/4-windows.layout'
+bind -c layoutm 2 eval 'source $HOME/.screen/3-win_1-top.layout'
+bind -c layoutm 3 eval 'source $HOME/.screen/3-win_1-left.layout'
+bind -c layoutm 4 eval 'source $HOME/.screen/monitor.layout'
+bind -c layoutm 5 eval 'source $HOME/.screen/split.layout'
+bind -c layoutm 6 eval 'source $HOME/.screen/vsplit.layout'
+
+# Save layout
+bind -c layout s eval 'command -c layouts' 'layout show'
+bind -c layouts 0 eval 'layout save 0' 'echo "save to 0"'
+bind -c layouts 1 eval 'layout save 1' 'echo "save to 1"'
+bind -c layouts 2 eval 'layout save 2' 'echo "save to 2"'
+bind -c layouts 3 eval 'layout save 3' 'echo "save to 3"'
+bind -c layouts 4 eval 'layout save 4' 'echo "save to 4"'
+bind -c layouts 5 eval 'layout save 5' 'echo "save to 5"'
+bind -c layouts 6 eval 'layout save 6' 'echo "save to 6"'
+bind -c layouts 7 eval 'layout save 7' 'echo "save to 7"'
+bind -c layouts 8 eval 'layout save 8' 'echo "save to 8"'
+bind -c layouts 9 eval 'layout save 9' 'echo "save to 9"'
+# 
+# comment out by kon(2017-06-14)
+# |# Layout command prefix C-q
+# |bind ^q eval 'command -c layout' 'source ~/.screen/layout_show'
+# |#bind ^q eval 'command -c layout' 'msgminwait 5' 'layout show' 'echo "n: next, p: prev, i: init/reset, s: save, c: new, m: set, x: remove, <n>: goto <n>"'
+# |bind -c layout ^q eval 'command -c layout' 'source ~/.screen/layout_show'
+# |# Make/Remove layout
+# |bind -c layout c eval 'command -c layout' 'layout new' 'source ~/.screen/layout_show'
+# |bind -c layout x eval 'command -c layout' 'layout remove' 'source ~/.screen/layout_show'
+# |# Modify title/number
+# |bind -c layout T colon 'layout title '
+# |bind -c layout N colon 'layout number '
+# |# Go to Next/Previous layout
+# |bind -c layout n eval 'layout next' 'source ~/.screen/layout_show'
+# |bind -c layout p eval 'layout prev' 'source ~/.screen/layout_show'
+# |bind -c layout ^N eval 'command -c layout' 'layout next' 'source ~/.screen/layout_show'
+# |bind -c layout ^P eval 'command -c layout' 'layout prev' 'source ~/.screen/layout_show'
+# |# Choose n-th layout
+# |bind -c layout 0 eval 'command -c layout' 'layout select 0' 'source ~/.screen/layout_show'
+# |bind -c layout 1 eval 'command -c layout' 'layout select 1' 'source ~/.screen/layout_show'
+# |bind -c layout 2 eval 'command -c layout' 'layout select 2' 'source ~/.screen/layout_show'
+# |bind -c layout 3 eval 'command -c layout' 'layout select 3' 'source ~/.screen/layout_show'
+# |bind -c layout 4 eval 'command -c layout' 'layout select 4' 'source ~/.screen/layout_show'
+# |bind -c layout 5 eval 'command -c layout' 'layout select 5' 'source ~/.screen/layout_show'
+# |bind -c layout 6 eval 'command -c layout' 'layout select 6' 'source ~/.screen/layout_show'
+# |bind -c layout 7 eval 'command -c layout' 'layout select 7' 'source ~/.screen/layout_show'
+# |bind -c layout 8 eval 'command -c layout' 'layout select 8' 'source ~/.screen/layout_show'
+# |bind -c layout 9 eval 'command -c layout' 'layout select 9' 'source ~/.screen/layout_show'
+# |# Initialize/Reset layouts
+# |bind -c layout i eval 'next' 'exec /bin/sh -c ~/.screen/all_layout.sh'
+# |bind -c layout ^i eval 'next' 'exec /bin/sh -c ~/.screen/all_layout.sh'
+# |# Set layout
+# |bind -c layout m eval 'command -c layoutm' 'echo "Set layout: 0 only, l 4-windows, 2 3-win_1-top, 3 3-win_1-top, 4 monitor (1 top, 3 small bottoms), 5 split, 6 vsplit, "'
+# |bind -c layoutm 0 eval 'exec /bin/sh -c "~/.screen/layout.sh only 0 off 1 1 1"'
+# |bind -c layoutm 1 eval 'exec /bin/sh -c "~/.screen/layout.sh 4-windows 0 off 1 4 4"'
+# |bind -c layoutm 2 eval 'exec /bin/sh -c "~/.screen/layout.sh 3-win_1-top 0 off 1 3 3"'
+# |bind -c layoutm 3 eval 'exec /bin/sh -c "~/.screen/layout.sh 3-win_1-left 0 off 1 3 3"'
+# |bind -c layoutm 4 eval 'exec /bin/sh -c "~/.screen/layout.sh monitor 0 off 1 4 4"'
+# |bind -c layoutm 5 eval 'exec /bin/sh -c "~/.screen/layout.sh split 0 off 1 2 2"'
+# |bind -c layoutm 6 eval 'exec /bin/sh -c "~/.screen/layout.sh vsplit 0 off 1 2 2"'
+# |# Save layout
+# |bind -c layout s eval 'next' 'exec /bin/sh -c "~/.screen/layout_save.sh"'
+# |
+# |# Make 4 window with no new screen
+# |# First 'next' is needed when it is on empty window for exec
+# |bind r eval 'next' 'exec /bin/sh -c ~/.screen/layout.sh'
+# |bind ^r eval 'next' 'exec /bin/sh -c ~/.screen/layout.sh'
+
+# Resize window
+bind e eval 'command -c resize' 'echo "Resize window"'
+bind ^e eval 'command -c resize' 'echo "Resize window"'
+bind -c resize h eval 'command -c resize' 'resize -h -1'
+bind -c resize l eval 'command -c resize' 'resize -h +1'
+bind -c resize j eval 'command -c resize' 'resize -v +1'
+bind -c resize k eval 'command -c resize' 'resize -v -1'
+bind -c resize ^h eval 'command -c resize' 'resize -h -1'
+bind -c resize ^l eval 'command -c resize' 'resize -h +1'
+bind -c resize ^j eval 'command -c resize' 'resize -v +1'
+bind -c resize ^k eval 'command -c resize' 'resize -v -1'
+
+# Clip board, xclip or xsel?
+# xsel (xclip also?) sometime remains like zombie...?
+bufferfile "$SCREENEXCHANGE"
+
+# ref: man screen -> exec
+# !!! is needed especially for ' '.
+# It executes the command at first ' ' to start the copy,
+# and does again at the end, then multi_clipboard is executed twice...
+# If . is set for stdout (second one), the second command is not executed...?
+#bindkey -m ' ' eval 'stuff \040' 'writebuf' 'exec !!! multi_clipboard -I'
+# -> maybe `exec <direct command>` is not good?
+# -> `exec /bin/sh <command> seems better...
+bindkey -m ' ' eval 'stuff \040' 'exec /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -I;fi"'
+bindkey -m Y eval 'stuff Y' 'exec /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -I;fi"'
+#bindkey -m D eval 'stuff \040' 'stuff $' 'stuff \040' 'exec /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -I;fi"' # problem at search in copy mode
+#bindkey -m $ eval 'stuff \040' 'stuff $' 'stuff \040' 'exec /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -I;fi"' # problem at search in copy mode
+bindkey -m W eval 'stuff W' 'writebuf' 'exec /bin/sh  -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -I;fi"'
+
+# !!! should not be applied (especially for stdout (second one)).
+# Otherwise some outputs come to the window(?)
+bind z eval 'command -c mc' 'exec /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -S;fi"'
+bind ^z eval 'command -c mc' 'exec /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -S;fi"'
+bind -c mc n eval 'command -c mc' 'exec /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -S -n;fi"'
+bind -c mc ^n eval 'command -c mc' 'exec /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -S -n;fi"'
+bind -c mc p eval 'command -c mc' 'exec /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -S -p;fi"'
+bind -c mc ^p eval 'command -c mc' 'exec /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -S -p;fi"'
+bind -c mc q eval 'exec /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -S -q;fi"'
+bind -c mc ^q eval 'exec /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -S -q;fi"'
+bind -c mc ' ' eval 'exec /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -S -s;fi"'
+# Enter (\012) doesn't work for bindings with command?
+#bind -c mc '\012' eval "!bash -c 'if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -S -s;fi'"
+
+bind a screen -t multi_clipboard /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -W;fi"
+bind ^a screen -t multi_clipboard /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -W;fi"
+
+bind A eval 'exec /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -x;fi"' 'echo "copied to OS clipboard"'
+# Ctrl-Capital is not capital, but bind lower case (Ctrl-a)...?
+#bind ^A eval 'exec /bin/sh -c "if type -a multi_clipboard >/dev/null 2>&1;then multi_clipboard -x;fi"'
+
+# Term
+#term "screen-256color"
+
+# not change the window size when it is attached
+termcapinfo xterm* is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l
+
+# xterm understands both im/ic and doesn't have a status line.
+# Note: Do not specify im and ic in the real termcap/info file as
+# some programs (e.g. vi) will (no,no, may (jw)) not work anymore.
+termcap xterm* hs@:cs=\E[%i%d;%dr:im=\E[4h:ei=\E[4l
+terminfo xterm* hs@:cs=\E[%i%p1%d;%p2%dr:im=\E[4h:ei=\E[4l
+
+# Do not use xterms alternate window buffer.
+# This one would not add lines to the scrollback buffer.
+termcapinfo xterm* 'ti@:te@'
+#termcapinfo xterm* ti=\E7\E[?47l
+
+# Caption for each window
+setenv a ""
+setenv a "$a%?%F"     # if the window has the focus
+setenv a "$a%{=d Wk}" #   set attribute = {dim, black(k) on bright Write(W)}
+setenv a "$a%:"       # else
+setenv a "$a%{=d Kk}" #   set attribute = {dim, black(k) on bright Black(K)}
+setenv a "$a%?"       # end if
+setenv a "$a%?%P"     # if copy/paste mode
+setenv a "$a%{=d Bk}" #   set attribute = {dim, black(k) on bright Blue(B)}
+setenv a "$a%?"       # end if
+setenv a "$a%n"       # window number
+setenv a "$a "        # space
+setenv a "$a%L="      # Mark the position for the next truncation
+setenv a "$a%h"       # window' hardstatus
+setenv a "$a%L>"      # Truncate %L= ~ %L>, 'L' for > gives marks at the truncation point
+setenv a "$a%="       # With the last %-0=, it makes right alignment for following lines
+setenv a "$a%?%P"     # if copy/paste mode
+setenv a "$a  *copy/paste*" # draw this sentence
+setenv a "$a%?"       # end if
+setenv a "$a%?%E"     # if copy/paste mode
+setenv a "$a  ***command**" # draw this sentence
+setenv a "$a%?"       # end if
+setenv a "$a%-0="     # pad the string to the display's width. "-0" means
+                      # start from the rightest side
+                      # (e.g. 10=: 10% from left, 010, 10 characters from left
+                      # (     -10=: 10% from right)
+                      # With %L>, %= above, screen tries to truncates the part 
+                      # in the left of "%L>"
+caption always "$a"
+unsetenv a
+
+# hardstatus
+setenv a ""
+setenv a "$a%{= Kk}" # set attribute = {black(k) on bright Black(K)}
+setenv a "$a%-w"     # windows' list up to the current window (shown as "%n %t")
+setenv a "$a%40>"    # Mark here as a point to move when truncation
+                     # Try to move this point to the 40% point
+setenv a "$a%{= Wk}" # set attribute = {black(k) on bright Write(W)}
+setenv a "$a%n"      # current window number
+setenv a "$a "       # space
+setenv a "$a%t"      # current window title
+setenv a "$a%{-}"    # remove the set from the current attributes
+setenv a "$a%+w"     # windows' list starting with the window after the current one (shown as "%n %t")
+setenv a "$a%-0="    # pad the string to the display's width.
+                     # About Truncation/Padding(=,<,>)
+                     # http://aperiodic.net/screen/truncation_padding_escapes
+hardstatus alwayslastline "$a"
+unsetenv a

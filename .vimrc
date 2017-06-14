@@ -42,6 +42,8 @@ set tabstop=4
 set shiftwidth=4
 " C言語風にインデントを増減させる
 set smartindent
+" 1 tab->4 harf-space
+set expandtab
 
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
@@ -57,6 +59,11 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+" 補完
+" 補完にopencv2を追加
+let $BOOST_ROOT = "/usr/local/include/opencv2"
+set path+=$BOOST_ROOT
+
 " dein.vim ---------------
 if &compatible
 	set nocompatible
@@ -67,6 +74,7 @@ call dein#begin(expand('~/.vim/bundles'))
 
 call dein#add('Shougo/dein.vim')
 " Template: call dein#add('JohnDoe/plugin.vim')
+call dein#add('Shougo/neosnippet-snippets')
 call dein#add('Shougo/neocomplete.vim', {'on_i': 1})
 call dein#add('plasticboy/vim-markdown', { 'on_ft': 'md'})
 
