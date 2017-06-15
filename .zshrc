@@ -82,3 +82,9 @@ alias ll='ls -l'
 alias mkdir='mkdir -p'
 
 # --------------------
+#
+
+# .zprofile
+if [ $SHLVL = 2 ];then
+    screen
+fi

@@ -1,5 +1,3 @@
-exec $HOME/.screen/win_prepare.sh
-
 layout remove only
 layout new only
 source $HOME/.screen/only.layout
@@ -35,4 +33,4 @@ source $HOME/.screen/monitor.layout
 layout save monitor
 layout autosave on
 
-layout select 4-windows
+layout select 3-win_1-top

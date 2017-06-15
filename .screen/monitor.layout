@@ -1,13 +1,13 @@
 only
-select $win0
+select 0
 split
 resize -v 80%
 focus
-select $win1
+select 1
 split -v
 split -v
 focus
-select $win2
+select 2
 focus
-select $win3
+select 3
 focus
