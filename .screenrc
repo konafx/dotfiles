@@ -186,7 +186,7 @@ bind -c layouts 7 eval 'layout save 7' 'echo "save to 7"'
 bind -c layouts 8 eval 'layout save 8' 'echo "save to 8"'
 bind -c layouts 9 eval 'layout save 9' 'echo "save to 9"'
 # 
-# comment out by kon(2017-06-14)
+# comment out by me(2017-06-14)
 # |# Layout command prefix C-q
 # |bind ^q eval 'command -c layout' 'source ~/.screen/layout_show'
 # |#bind ^q eval 'command -c layout' 'msgminwait 5' 'layout show' 'echo "n: next, p: prev, i: init/reset, s: save, c: new, m: set, x: remove, <n>: goto <n>"'
