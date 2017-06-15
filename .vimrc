@@ -75,8 +75,12 @@ call dein#begin(expand('~/.vim/bundles'))
 call dein#add('Shougo/dein.vim')
 " Template: call dein#add('JohnDoe/plugin.vim')
 call dein#add('Shougo/neosnippet-snippets')
-call dein#add('Shougo/neocomplete.vim', {'on_i': 1})
+" 補完用プラグイン, need: lua
+" lua を入れるのに四苦八苦してるのでとりあえず入れない方向で
+" call dein#add('Shougo/neocomplete.vim', {'on_i': 1})
 call dein#add('plasticboy/vim-markdown', { 'on_ft': 'md'})
+" git連携用プラグイン
+call dein#add('tpope/vim-fugitive')
 
 call dein#end()
 

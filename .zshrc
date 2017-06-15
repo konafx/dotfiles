@@ -2,8 +2,7 @@
 ## ZPLUG
 #source ~/.zplug/init.zsh
 #
-## Define plugins
-##zplug "zsh-users/zsh-history-substring-search"
+## Define plugins ##zplug "zsh-users/zsh-history-substring-search"
 ##
 ##zplug "mollifier/cd-gitroot"
 ## リビジョンロック機能を持つ
@@ -82,9 +81,26 @@ alias ll='ls -l'
 alias mkdir='mkdir -p'
 
 # --------------------
-#
+# GNU screen
 
-# .zprofile
-if [ $SHLVL = 2 ];then
-    screen
+# デタッチされているセッションを削除 
+fuction screen-rm (){
+    # -h, --help   
+    help() {
+        echo 'Usage:    screen-rm [host.tty]'
+        echo '       or screen-rm *'
+        return
+    }
+    screen -r -X quit;
+    rm -rf /tmp/uscreens/S-kon/$1
+}
+# --------------------
+# 起動時の設定
+# というかprofileファイル自体, ログインシェル起動時にしか読み込まれないんですけどね.
+#
+# シェルの深さが1のとき, つまりターミナル起動の際, GNU screenの起動.
+# セッションがすでに有る場合, それにアタッチする.
+# なかった場合, 新たに起動する.
+if [ $SHLVL = 1 ];then
+    screen -xR
 fi
