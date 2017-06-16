@@ -45,32 +45,40 @@ SAVEHIST=1000
 setopt auto_pushd
 
 # Use color
+# 色使う
 autoload -Uz colors; colors
 # Use completion
+# 補完使う？
 autoload -U compinit; compinit
 
 # LANG
+# 言語設定
 export LANG=ja_JP.UTF-8
 
 # sync history
+# コマンド履歴の同期
 setopt share_history
 
 # Directly specify the directory name
+# ディレクトリ名だけでcdできるように
 setopt auto_cd
 function chpwd() { ls }
 
 # --------------------
 # PATH
+# 環境変数の設定
 # to ~/local/bin
 export PATH=${HOME}/local/bin:${HOME}/.local/bin:${PATH}
 
 # --------------------
 # PROMPT
+# プロンプトの設定
 PROMPT='[%F{cyan}%*%f] %n@%~
 $ '
 
 # --------------------
 # ALIAS
+# エイリアス
 
 # ls
 alias ls='ls -F --color'
@@ -96,11 +104,12 @@ fuction screen-rm (){
 }
 # --------------------
 # 起動時の設定
-# というかprofileファイル自体, ログインシェル起動時にしか読み込まれないんですけどね.
+# ~~というかprofileファイル自体、ログインシェル起動時にしか読み込まれないんですけどね。~~
+# .zprofileが読み込まれていない。なぜ？
 #
-# シェルの深さが1のとき, つまりターミナル起動の際, GNU screenの起動.
-# セッションがすでに有る場合, それにアタッチする.
-# なかった場合, 新たに起動する.
+# シェルの深さが1のとき、つまりターミナル起動の際、GNU screenの起動をする。
+# セッションがすでに有る場合、それにアタッチする。
+# なかった場合、新たに起動する。
 if [ $SHLVL = 1 ];then
     screen -xR
 fi

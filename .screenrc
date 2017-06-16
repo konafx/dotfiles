@@ -125,6 +125,16 @@ bind s split
 bind ^s split
 
 # Layout
+#
+# ^q    : Layout mode
+# +-> i : ->initialize
+# +-> m : select layout from template
+# +-> c : create layout
+# +-> x : delete layout
+# +-> n : move layout (next)
+# +-> p : move layout (prev)
+# +-> s : save layout
+
 ## Layout command prefix C-q
 bind ^q eval 'command -c layout' 'layout show'
 bind -c layout ^q eval 'command -c layout' 'layout show'
