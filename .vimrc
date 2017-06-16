@@ -1,3 +1,6 @@
+scriptencoding utf-8
+" このファイルの文字コード指定
+
 " setting
 " 文字コードをUFT-8に設定
 set fenc=utf-8
