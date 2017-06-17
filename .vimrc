@@ -1,6 +1,10 @@
+scriptencoding utf-8
+" utf-8で書かれたスクリプトである
+
 " setting
-" 文字コードをUFT-8に設定
-set fenc=utf-8
+set enc=utf-8
+set fenc=utf-8,cp932,sjis,iso-2022-jp
+set ff=unix,dos,mac
 " バックアップファイルを作らない
 set nobackup
 " スワップファイルを作らない
