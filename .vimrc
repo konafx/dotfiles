@@ -3,8 +3,8 @@ scriptencoding utf-8
 
 " setting
 set enc=utf-8
-set fenc=utf-8,cp932,sjis,iso-2022-jp
-set ff=unix,dos,mac
+set fencs=utf-8,sjis,euc-jp,iso-2022-jp
+set ffs=unix,dos,mac
 " バックアップファイルを作らない
 set nobackup
 " スワップファイルを作らない
