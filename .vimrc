@@ -63,6 +63,14 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+" ----------
+" command
+" 
+" run: ruby, python, perl
+autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
+autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
+autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
+
 " 補完
 " 補完にopencv2を追加
 let $BOOST_ROOT = "/usr/local/include/opencv2"
