@@ -4,3 +4,12 @@
 # Executale
 *.out
 *.exe
+
+.DS_Store   # Macの一時ファイル
+*.log       # Rails等のログファイル
+*.sqlite    # SQLite3のDBファイル
+*.swp       # Vimの一時ファイル
+*.swo       # Vimの一時ファイル
+*‾          # Emacsの一時ファイル
+*.un‾       # VimのUndo情報を保存したファイル
+*.ini       # desktop.ini
