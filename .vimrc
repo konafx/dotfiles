@@ -1,9 +1,5 @@
 scriptencoding utf-8
-<<<<<<< HEAD
-" このファイルの文字コード指定
-=======
 " utf-8で書かれたスクリプトである
->>>>>>> 169829194795e8727d97068b80d45d2f0c33d244
 
 " setting
 set enc=utf-8
