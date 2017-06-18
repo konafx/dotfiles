@@ -1,9 +1,14 @@
 scriptencoding utf-8
+<<<<<<< HEAD
 " このファイルの文字コード指定
+=======
+" utf-8で書かれたスクリプトである
+>>>>>>> 169829194795e8727d97068b80d45d2f0c33d244
 
 " setting
-" 文字コードをUFT-8に設定
-set fenc=utf-8
+set enc=utf-8
+set fencs=utf-8,sjis,euc-jp,iso-2022-jp
+set ffs=unix,dos,mac
 " バックアップファイルを作らない
 set nobackup
 " スワップファイルを作らない
@@ -61,6 +66,14 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" ----------
+" command
+" 
+" run: ruby, python, perl
+autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
+autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
+autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
 
 " 補完
 " 補完にopencv2を追加
