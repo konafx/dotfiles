@@ -102,6 +102,18 @@ fuction screen-rm (){
     screen -r -X quit;
     rm -rf /tmp/uscreens/S-kon/$1
 }
+
+# markdown -> pdf
+function md2pdf (){
+    # -h, --help
+    help() {
+        echo "USE pandoc"
+        echo "pandoc $1 -o $2 --latex-engine=lualatex -H h-luatexja.tex"
+        return
+    }
+    pandoc $1 -o $2 --latex-engine=lualatex -H ~/local/src/h-luatexja.tex
+}
+
 # --------------------
 # 起動時の設定
 # ~~というかprofileファイル自体、ログインシェル起動時にしか読み込まれないんですけどね。~~

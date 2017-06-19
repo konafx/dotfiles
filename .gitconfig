@@ -1,6 +1,5 @@
 [user]
     useConfigOnly = true
-    email = kon0409warp@gmail.com
 
 [core]
     excludesfile = ~/.gitignore
