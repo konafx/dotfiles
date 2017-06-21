@@ -4,3 +4,8 @@
 [core]
     excludesfile = ~/.gitignore
     editor = vim
+
+[alias]
+    st = status
+    br = branch
+    cm = commit -am
