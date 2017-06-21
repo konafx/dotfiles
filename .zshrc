@@ -81,16 +81,16 @@ $ '
 # エイリアス
 
 # ls
-case ${OSTYPE} in
+case "${OSTYPE}" in
     darwin*)
-        alias ls 'ls -FG'
+        alias ls='ls -FG'
         ;;
     linux*)
-        alias ls 'ls -F --color=auto'
+        alias ls='ls -F --color=auto'
         ;;
 esac
-alias ll 'ls -l'
-alias la 'ls -a'
+alias ll='ls -l'
+alias la='ls -a'
 
 # mkdir
 alias mkdir='mkdir -p'
