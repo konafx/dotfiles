@@ -81,9 +81,20 @@ $ '
 # エイリアス
 
 # ls
-alias ls='ls -F --color'
-alias la='ls -a'
-alias ll='ls -l'
+case ${OSTYPE} in
+    darwin*)
+        alias ls 'ls -FG'
+        alias ll 'ls -FlG'
+        alias la 'ls -FaG'
+        alias lad 'ls -FdG'
+        ;;
+    linux*)
+        alias ls 'ls -F --color=auto'
+        alias ll 'ls -Fl --color=auto'
+        alias la 'ls -Fa --color=auto'
+        alias ls-hidden 'ls -d .* --color=auto'
+        ;;
+esac
 
 # mkdir
 alias mkdir='mkdir -p'
