@@ -84,17 +84,13 @@ $ '
 case ${OSTYPE} in
     darwin*)
         alias ls 'ls -FG'
-        alias ll 'ls -FlG'
-        alias la 'ls -FaG'
-        alias lad 'ls -FdG'
         ;;
     linux*)
         alias ls 'ls -F --color=auto'
-        alias ll 'ls -Fl --color=auto'
-        alias la 'ls -Fa --color=auto'
-        alias ls-hidden 'ls -d .* --color=auto'
         ;;
 esac
+alias ll 'ls -l'
+alias la 'ls -a'
 
 # mkdir
 alias mkdir='mkdir -p'
