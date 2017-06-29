@@ -71,30 +71,30 @@ autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
 
-""" dein.vim ---------------
-"if &compatible
-"	set nocompatible
-"endif
-"set runtimepath+=~/.vim/bundles/repos/github.com/Shougo/dein.vim
-"
-"call dein#begin(expand('~/.vim/bundles'))
-"
-"call dein#add('Shougo/dein.vim')
-"" Template: call dein#add('JohnDoe/plugin.vim')
-"call dein#add('Shougo/neosnippet-snippets')
-"" 補完用プラグイン, need: lua
-"" lua を入れるのに四苦八苦してるのでとりあえず入れない方向で
-"call dein#add('Shougo/neocomplete.vim', {'on_i': 2})
-"call dein#add('plasticboy/vim-markdown', { 'on_ft': 'md'})
-"" git連携用プラグイン
-"call dein#add('tpope/vim-fugitive')
-"
-"call dein#end()
-"
-"" Auto install
-"if dein#check_install()
-"	call dein#install()
-"endif
-"
-"filetype plugin indent on
-"" Endline of dein.vim ----------
+"" dein.vim ---------------
+if &compatible
+	set nocompatible
+endif
+set runtimepath+=~/.vim/bundles/repos/github.com/Shougo/dein.vim
+
+call dein#begin(expand('~/.vim/bundles'))
+
+call dein#add('Shougo/dein.vim')
+" Template: call dein#add('JohnDoe/plugin.vim')
+call dein#add('Shougo/neosnippet-snippets')
+" 補完用プラグイン, need: lua
+" lua を入れるのに四苦八苦してるのでとりあえず入れない方向で
+call dein#add('Shougo/neocomplete.vim', {'on_i': 2})
+call dein#add('plasticboy/vim-markdown', { 'on_ft': 'md'})
+" git連携用プラグイン
+call dein#add('tpope/vim-fugitive')
+
+call dein#end()
+
+" Auto install
+if dein#check_install()
+	call dein#install()
+endif
+
+filetype plugin indent on
+" Endline of dein.vim ----------
