@@ -79,8 +79,6 @@ $ '
 # --------------------
 # ALIAS
 # エイリアス
-
-# ls
 case "${OSTYPE}" in
     darwin*)
         alias ls='ls -FG'
@@ -92,8 +90,11 @@ esac
 alias ll='ls -l'
 alias la='ls -a'
 
-# mkdir
 alias mkdir='mkdir -p'
+
+# デバックモードでビルド
+alias cmake_debug='cd ~/project/opencv_ex/build; cmake .. -DCMAKE_BUILD_TYPE=Debug'
+
 
 # --------------------
 # GNU screen
