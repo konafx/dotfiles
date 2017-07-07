@@ -71,7 +71,7 @@ autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
 
-" dein.vim ---------------
+"" dein.vim ---------------
 if &compatible
 	set nocompatible
 endif

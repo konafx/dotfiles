@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES=(.zshrc .vimrc .gvimrc .screenrc .screen .gitconfig .gitignore)
+DOTFILES=(.zshrc .bashrc .vimrc .gvimrc .screenrc .screen .gitconfig .gitignore)
 # .zprofileは読み込んでくれない。
 
 for file in ${DOTFILES[@]}
