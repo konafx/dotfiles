@@ -1,5 +1,5 @@
 [user]
-    useConfigOnly = true
+#    useConfigOnly = true
 
 [core]
     excludesfile = ~/.gitignore

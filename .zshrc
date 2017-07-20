@@ -95,6 +95,13 @@ alias mkdir='mkdir -p'
 # デバックモードでビルド
 alias cmake_debug='cd ~/project/opencv_ex/build; cmake .. -DCMAKE_BUILD_TYPE=Debug'
 
+# tar
+# 解凍
+alias ungz='tar -zxvf'
+alias unbz2='tar -jxvf'
+alias unxz='tar -Jxvf'
+alias untar='tar -xvf'
+
 
 # --------------------
 # GNU screen
