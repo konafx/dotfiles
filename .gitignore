@@ -10,6 +10,6 @@
 *.sqlite    # SQLite3のDBファイル
 *.swp       # Vimの一時ファイル
 *.swo       # Vimの一時ファイル
-*‾          # Emacsの一時ファイル
-*.un‾       # VimのUndo情報を保存したファイル
+*~          # Emacsの一時ファイル
+*.un~       # VimのUndo情報を保存したファイル
 *.ini       # desktop.ini
