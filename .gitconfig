@@ -9,3 +9,6 @@
     st = status
     br = branch
     cm = commit -am
+[user]
+    email = kon0409warp@gmail.com
+    name = kon
