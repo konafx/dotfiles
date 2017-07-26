@@ -10,5 +10,5 @@
     br = branch
     cm = commit -am
 [user]
+    name = konafx
     email = kon0409warp@gmail.com
-    name = kon

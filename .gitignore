@@ -13,3 +13,13 @@
 *~          # Emacsの一時ファイル
 *.un~       # VimのUndo情報を保存したファイル
 *.ini       # desktop.ini
+
+# pyton
+__pycache__/
+*.py[cod]
+
+#Cmake
+cmake*
+CMake*
+CMakeFiles/*
+Makefile
