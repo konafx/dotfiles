@@ -23,3 +23,21 @@ cmake*
 CMake*
 CMakeFiles/*
 Makefile
+
+# Java
+.metadata/
+
+# ??
+*.*~
+
+# exclusion dir
+backup
+batch
+log
+tmp
+
+# IF .gitignore do not reflect, do it.
+# git rm -r --cached .
+# git add .
+# git commit -m ".gitignore is now working"
+# git push origin master

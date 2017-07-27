@@ -1,11 +1,10 @@
 [core]
     excludesfile = ~/.gitignore
     editor = vim
-
 [alias]
     st = status
     br = branch
-    cm = commit -am
+    cm = commit -m
 [user]
     name = konafx
     email = kon0409warp@gmail.com
