@@ -39,7 +39,7 @@
 - `C-a "`: SEE window-LIST
 - `C-a k`: KILL current window (BE CAREFUL)
 - `C-a \`: KILL ALL windows (BE CAREFUL)
-- `C-a A`: RENAME current window
+- `:title <name>`: RENAME current window <!-- - `C-a A` -->
 
 ### Split screen
 - `C-a S`: split HORIZONtally
