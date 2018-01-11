@@ -26,6 +26,14 @@ set visualbell
 set showmatch
 " ステータスラインを常に表示
 set laststatus=2
+" ステータスラインの表示
+set statusline=%<                           " shorted-position
+set statusline+=%f\                         " file [space]
+set statusline+=%m%r%h                      " flag(mod, readonly, help)
+set statusline+=%{fugitive#statusline()}%=  " Git-branch-name stop
+set statusline+=%-14.(%l,%c,%v%)            " LEFT: #(line, col-b, col-vir)
+set statusline+=\ \[ENC=%{&fileencoding}]%P " fileenc current-position
+
 " コマンドラインの補完
 set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
