@@ -12,10 +12,10 @@
 
 ### vim-fugitive
 - `:Gstatus`
-    - `-`: `add`/`reset`
-    - `p`: `add`/`reset` `--patch`
-    - `C` or `cc`: `commit`
-    - `D`: view `diff`
+    - `-`: add/reset
+    - `p`: add/reset --patch
+    - `C` or `cc`: commit
+    - `D`: diff
 - `:Gread`: HEADまでコードを復元
 - `:Gbrowse`: Open file on Github
 
