@@ -1,6 +1,6 @@
 [core]
     excludesfile = ~/.gitignore
-    editor = vim
+    editor = vi
 [alias]
     st = status
     br = branch
