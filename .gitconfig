@@ -8,3 +8,5 @@
 [user]
     name = konafx
     email = kon0409warp@gmail.com
+[push]
+	default = matching
