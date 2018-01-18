@@ -19,5 +19,6 @@ alias mkdir='mkdir -p'
 # デバックモードでビルド
 alias cmake_debug='cd ~/project/opencv_ex/build; cmake .. -DCMAKE_BUILD_TYPE=Debug'
 
-# 解凍
-alias extract='extract-file'
+# for SCCP
+alias ping_rajikon='ping 192.168.11.23'
+alias ssh_rajikon='ssh pi@192.168.11.23'
