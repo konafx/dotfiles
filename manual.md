@@ -1,6 +1,8 @@
 # Manual
 ## zsh
+
 ## bash
+
 ## vim
 ### 分割
 - `:vsp` 横分割
