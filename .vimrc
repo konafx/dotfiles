@@ -88,12 +88,13 @@ autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
 if &compatible
 	set nocompatible
 endif
-set runtimepath+=~/.vim/bundles/repos/github.com/Shougo/dein.vim
+set runtimepath^=~/.vim/bundles/repos/github.com/Shougo/dein.vim
 
 call dein#begin(expand('~/.vim/bundles'))
 
 call dein#add('Shougo/dein.vim')
 " Template: call dein#add('JohnDoe/plugin.vim')
+call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
 " 補完用プラグイン, need: lua
 " lua を入れるのに四苦八苦してるのでとりあえず入れない方向で
@@ -102,12 +103,15 @@ call dein#add('plasticboy/vim-markdown', { 'on_ft': 'md'})
 " git連携用プラグイン
 call dein#add('tpope/vim-fugitive')
 
+call dein#add('Shougo/vimshell', {'rev': '3787e5'})
+
 call dein#end()
 
+filetype plugin indent on
+"
 " Auto install
 if dein#check_install()
 	call dein#install()
 endif
 
-filetype plugin indent on
 " Endline of dein.vim ----------
