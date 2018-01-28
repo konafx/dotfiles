@@ -2,12 +2,13 @@
 
 # --------------------
 # ls
+umask 022
 case "${OSTYPE}" in
     darwin*)
         alias ls='ls -FG'
         ;;
     linux*)
-        alias ls='ls -F --color=auto'
+        alias ls='ls -F --color=auto --show-control-chars -I "NTUSER.DAT*"'
         ;;
 esac
 alias ll='ls -l'
