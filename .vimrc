@@ -30,7 +30,7 @@ set laststatus=2
 set statusline=%<                           " shorted-position
 set statusline+=%f\                         " file [space]
 set statusline+=%m%r%h                      " flag(mod, readonly, help)
-set statusline+=%{fugitive#statusline()}%=  " Git-branch-name stop
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}%=  " Git-branch-name stop
 set statusline+=%-14.(%l,%c,%v%)            " LEFT: #(line, col-b, col-vir)
 set statusline+=\ \[ENC=%{&fileencoding}]%P " fileenc current-position
 

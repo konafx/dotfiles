@@ -1,3 +1,6 @@
+# Exist SCREEN!!
+setenv SCREEN true
+
 # Escape
 escape ^Aa
 

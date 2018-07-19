@@ -1,6 +1,10 @@
 # dotfiles
 嘘英語とググリティの結晶
 
+## Needed
+- curl
+- git
+
 ## TODO
 1. Get `dotfiles`
 1. Run `setup.sh`
@@ -10,12 +14,14 @@
 ### setup.sh
 init configure
 
-### .zshrc, .zsh/
-- not install `zplug`
-- configures are `.zsh/conf/*.zsh`
-
-### .bashrc, .bash/
-- configures are `.bash/conf/*.bash
+### fish
+hahaha
+> ### .zshrc, .zsh/
+> - not install `zplug`
+> - configures are `.zsh/conf/*.zsh`
+> 
+> ### .bashrc, .bash/
+> - configures are `.bash/conf/*.bash
 
 ### .vimrc
 - use `dein.vim`

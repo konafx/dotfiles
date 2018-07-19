@@ -20,5 +20,5 @@ alias mkdir='mkdir -p'
 alias cmake_debug='cd ~/project/opencv_ex/build; cmake .. -DCMAKE_BUILD_TYPE=Debug'
 
 # for SCCP
-alias ping_rajikon='ping 192.168.11.23'
-alias ssh_rajikon='ssh pi@192.168.11.23'
+alias ping_rajikon='ping 192.168.11.222'
+alias ssh_rajikon='ssh pi@192.168.11.222'
