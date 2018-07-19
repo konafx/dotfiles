@@ -13,17 +13,13 @@ DOTFILES=(.vimrc .gvimrc .screenrc .screen .gitconfig .gitignore)
 # done
 
 # pandoc用
-ln -fnsv $HOME/dotfiles/src/header-luatexja.tex $HOME/local/src/header-luatexja.tex
+#ln -fnsv $HOME/dotfiles/src/header-luatexja.tex $HOME/local/src/header-luatexja.tex
 
 # if [ ! -d ~/.zplug ]; then
 #     export ZPLUG_HOME=$HOME/.zplug
 #     git clone https://github.com/zplug/zplug $ZPLUG_HOME
 # fi
-<<<<<<< HEAD
-if [ ! -d ~/.vim/bundles ]; then
-=======
 if [ ! -d ~/.cache/dein ]; then
->>>>>>> 0da28b2faab6116982d985b9e0b114d0bcead65e
     curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
     sh ./installer.sh ~/.cache/dein
     rm -f ./installer.sh
