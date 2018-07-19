@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -149,5 +150,9 @@ export TF_BINARY_URL_PY36=https://storage.googleapis.com/tensorflow/linux/gpu/te
 #--------------------------------------------------------------------------#
 bash_conf=~/.bash/conf
 for f in $bash_conf/*.bash; do
+=======
+# ~/.bashrc
+for f in ~/.bash/conf/*.bash; do
+>>>>>>> 0da28b2faab6116982d985b9e0b114d0bcead65e
     source $f
 done

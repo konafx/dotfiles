@@ -36,6 +36,8 @@ batch
 log
 tmp
 
+# stdskel is not mine.
+stdskel.bash
 # IF .gitignore do not reflect, do it.
 # git rm -r --cached .
 # git add .

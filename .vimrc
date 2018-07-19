@@ -84,30 +84,47 @@ autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
 
-"" dein.vim ---------------
+" dein Scripts-----------------------------
 if &compatible
-	set nocompatible
-endif
-set runtimepath+=~/.vim/bundles/repos/github.com/Shougo/dein.vim
-
-call dein#begin(expand('~/.vim/bundles'))
-
-call dein#add('Shougo/dein.vim')
-" Template: call dein#add('JohnDoe/plugin.vim')
-call dein#add('Shougo/neosnippet-snippets')
-" 補完用プラグイン, need: lua
-" lua を入れるのに四苦八苦してるのでとりあえず入れない方向で
-call dein#add('Shougo/neocomplete.vim', {'on_i': 2})
-call dein#add('plasticboy/vim-markdown', { 'on_ft': 'md'})
-" git連携用プラグイン
-call dein#add('tpope/vim-fugitive')
-
-call dein#end()
-
-" Auto install
-if dein#check_install()
-	call dein#install()
+    set nocompatible               " Be iMproved
 endif
 
+" Required:
+set runtimepath+=/home/konafx/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('/home/konafx/.cache/dein')
+    call dein#begin('/home/konafx/.cache/dein')
+
+    " Let dein manage dein
+    " Required:
+    call dein#add('/home/konafx/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+    " Add or remove your plugins here:
+    call dein#add('Shougo/neosnippet.vim')
+    call dein#add('Shougo/neosnippet-snippets')
+    " Template:
+    " call dein#add('JohnDoe/plugin.vim')
+    call dein#add('Shougo/neocomplete.vim', {'on_i': 2})
+    call dein#add('plasticboy/vim-markdown', { 'on_ft': 'md'})
+    " git連携用プラグイン
+    call dein#add('tpope/vim-fugitive')
+
+    " You can specify revision/branch/tag.
+    " call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
+
+    " Required:
+    call dein#end()
+    call dein#save_state()
+endif
+
+" Required:
 filetype plugin indent on
-" Endline of dein.vim ----------
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
