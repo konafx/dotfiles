@@ -1,0 +1,47 @@
+# vim: ft=conf
+###############################################################################
+#                         _       _    __ _ _                                 #
+#                      __| | ___ | |_ / _(_) | ___  ___                       #
+#                     / _` |/ _ \| __| |_| | |/ _ \/ __|                      #
+#                    | (_| | (_) | |_|  _| | |  __/\__ \                      #
+#                     \__,_|\___/ \__|_| |_|_|\___||___/                      #
+#                                                                             #
+###############################################################################
+# This file contains dotfiles linksets.
+# You can comment out by adding "#" at the beginning of the line.
+# And an empty line is ignored by dot.
+#
+# Format:
+# <dotfile>,<linkto>
+#
+# the script automatically add directory information to the file path.
+# So, you should write like below:
+#     .vimrc,.vimrc
+#
+# You can load from outside of the dotfiles directory:
+#     ~/Dropbox/.netrc,.netrc
+#
+# You can easily copy the existing file to the dotfiles repository
+# and add new link list by
+#     dot add [-m "some comment"] original_file dotfiles_path
+# or, just
+#     dot add original_file
+# In the second example, the script automatically completes the second
+# arguments and confirm whether or not to execute that command.
+#
+#------------------------------------------------------------------------------
+.config/dot/dotrc,.config/dot/dotrc
+.config/fish/config.fish,.config/fish/config.fish
+.vimrc,.vimrc
+.hyper.js,Hyper/.hyper.js
+.gitconfig,.gitconfig
+.volt/config.toml,.volt/config.toml
+.volt/lock.json,.volt/lock.json
+.config/fish/functions/dot_add_volt.fish,.config/fish/functions/dot_add_volt.fish
+.volt/plugconf,.volt/plugconf
+.config/fish/functions/reload.fish,.config/fish/functions/reload.fish
+.config/fish/functions/volt_to_scrapbox.fish,.config/fish/functions/volt_to_scrapbox.fish
+.config/fish/functions/git_author_cleaner.fish,.config/fish/functions/git_author_cleaner.fish
+.config/fish/functions/voltrm.fish,.config/fish/functions/voltrm.fish
+.config/fish/functions/eff.fish,.config/fish/functions/eff.fish
+.config/fish/functions/chmod-r.fish,.config/fish/functions/chmod-r.fish
