@@ -1,0 +1,67 @@
+{
+  "version": 2,
+  "current_profile_name": "default",
+  "repos": [
+    {
+      "type": "git",
+      "path": "github.com/Xuyuanp/nerdtree-git-plugin",
+      "version": "f522a091e2838812d2669c331d7e9c283db6d54d"
+    },
+    {
+      "type": "git",
+      "path": "github.com/alvan/vim-closetag",
+      "version": "9f13011738e11d6f926a641d774635fa415f1b6e"
+    },
+    {
+      "type": "git",
+      "path": "github.com/heavenshell/vim-jsdoc",
+      "version": "b23073449d1df98ecfe73828079115e0d1d7573b"
+    },
+    {
+      "type": "git",
+      "path": "github.com/moll/vim-node",
+      "version": "ede047791792b9530ba1ae73ed86e9671cdd96b8"
+    },
+    {
+      "type": "git",
+      "path": "github.com/pangloss/vim-javascript",
+      "version": "2e4a8c485cdf601bb2f2761ea68c09750a0b82e0"
+    },
+    {
+      "type": "git",
+      "path": "github.com/posva/vim-vue",
+      "version": "c424294e769b26659176065f9713c395731f7b3a"
+    },
+    {
+      "type": "git",
+      "path": "github.com/scrooloose/nerdtree",
+      "version": "fec3e57ad23e4c268d07181d6afb858925b647a1"
+    },
+    {
+      "type": "git",
+      "path": "github.com/scrooloose/syntastic",
+      "version": "28bb72adbe5c610bdc07407ddb83898919e4645c"
+    },
+    {
+      "type": "git",
+      "path": "github.com/tpope/vim-fugitive",
+      "version": "1e57d678bad1ffb7468e7dccc45401d1b096249a"
+    }
+  ],
+  "profiles": [
+    {
+      "name": "default",
+      "repos_path": [
+        "github.com/Xuyuanp/nerdtree-git-plugin",
+        "github.com/alvan/vim-closetag",
+        "github.com/heavenshell/vim-jsdoc",
+        "github.com/moll/vim-node",
+        "github.com/pangloss/vim-javascript",
+        "github.com/posva/vim-vue",
+        "github.com/scrooloose/nerdtree",
+        "github.com/scrooloose/syntastic",
+        "github.com/tpope/vim-fugitive"
+      ]
+    }
+  ]
+}
