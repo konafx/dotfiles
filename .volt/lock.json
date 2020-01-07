@@ -35,17 +35,17 @@
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "fec3e57ad23e4c268d07181d6afb858925b647a1"
+      "version": "8a14891241e3468f9c13deaa6cf88aebe53b519f"
     },
     {
       "type": "git",
       "path": "github.com/scrooloose/syntastic",
-      "version": "28bb72adbe5c610bdc07407ddb83898919e4645c"
+      "version": "39b35b23b952d620b8ec7cabb13110f586663837"
     },
     {
       "type": "git",
       "path": "github.com/tpope/vim-fugitive",
-      "version": "1e57d678bad1ffb7468e7dccc45401d1b096249a"
+      "version": "3bf602b13d86b7aef57fec4a2df29467b61435cb"
     }
   ],
   "profiles": [
