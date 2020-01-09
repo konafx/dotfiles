@@ -20,10 +20,9 @@ alias ev='vim $HOME/.vimrc'
 
 # alias
 alias mkdir='mkdir -p'
+alias g='git'
 
 # For github local, remote
-alias g='cd (ghq list --full-path | fzf)'
-alias glook='ghq look (ghq list | fzf)'
 alias gh='hub browse (ghq list | fzf | cut -d "/" -f 2,3)'
 alias v="vim $VOLTPATH/plugconf/(volt list | sed -r 's/^[\ \t]+//g; 1,2d' | fzf --ansi).vim"
 
