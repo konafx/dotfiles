@@ -19,6 +19,11 @@
     },
     {
       "type": "git",
+      "path": "github.com/iamcco/markdown-preview.nvim",
+      "version": "827c819837948006169b0815b7c68091d6a72839"
+    },
+    {
+      "type": "git",
       "path": "github.com/moll/vim-node",
       "version": "ede047791792b9530ba1ae73ed86e9671cdd96b8"
     },
@@ -34,18 +39,28 @@
     },
     {
       "type": "git",
+      "path": "github.com/previm/previm",
+      "version": "d3185a916ee386419db26e8e89b17d159f1ee7cc"
+    },
+    {
+      "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "8a14891241e3468f9c13deaa6cf88aebe53b519f"
+      "version": "fec3e57ad23e4c268d07181d6afb858925b647a1"
     },
     {
       "type": "git",
       "path": "github.com/scrooloose/syntastic",
-      "version": "39b35b23b952d620b8ec7cabb13110f586663837"
+      "version": "28bb72adbe5c610bdc07407ddb83898919e4645c"
     },
     {
       "type": "git",
       "path": "github.com/tpope/vim-fugitive",
-      "version": "3bf602b13d86b7aef57fec4a2df29467b61435cb"
+      "version": "1e57d678bad1ffb7468e7dccc45401d1b096249a"
+    },
+    {
+      "type": "git",
+      "path": "github.com/tyru/open-browser.vim",
+      "version": "cd29e8c8db02cd7744728a8f77a829b967e5ff31"
     }
   ],
   "profiles": [
@@ -55,12 +70,15 @@
         "github.com/Xuyuanp/nerdtree-git-plugin",
         "github.com/alvan/vim-closetag",
         "github.com/heavenshell/vim-jsdoc",
+        "github.com/iamcco/markdown-preview.nvim",
         "github.com/moll/vim-node",
         "github.com/pangloss/vim-javascript",
         "github.com/posva/vim-vue",
+        "github.com/previm/previm",
         "github.com/scrooloose/nerdtree",
         "github.com/scrooloose/syntastic",
-        "github.com/tpope/vim-fugitive"
+        "github.com/tpope/vim-fugitive",
+        "github.com/tyru/open-browser.vim"
       ]
     }
   ]
