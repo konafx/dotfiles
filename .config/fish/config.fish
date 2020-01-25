@@ -18,9 +18,14 @@ umask 022
 alias ef='vim $HOME/.config/fish/config.fish'
 alias ev='vim $HOME/.vimrc'
 
+alias reload='exec fish'
+
 # alias
 alias mkdir='mkdir -p'
+
+# shortcut alias
 alias g='git'
+alias gst='git status'
 
 # For github local, remote
 alias gh='hub browse (ghq list | fzf | cut -d "/" -f 2,3)'
