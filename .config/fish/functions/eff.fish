@@ -1,16 +1,18 @@
 function eff -d 'edit fish functions'
     set -l fish_func_path $HOME/.config/fish/functions
 
+    set -l func_name
     if test -n "$argv[1]"
-        set -g func_name $argv[1]
-
-        # Add '.fish' if argv does't contain '.fish'
-        string match -r '\.fish$' $func_name; if test $status -eq 1
-            set -g func_name $func_name.fish
-        end
+        set func_name $argv[1]
+        # Add suffix ".fish"
+        string match -qr '\.fish$' $func_name; or set func_name $func_name.fish
     else
-        set -g func_name (ls $fish_func_path --color | fzf --ansi --tac)
+        set func_name (ls $fish_func_path --color | fzf --ansi --tac)
     end
 
-    eval "$EDITOR $fish_func_path/$func_name"
+    set -l editor vim
+    [ -n "$EDITOR" ]; and set editor $EDITOR
+
+    [ -n "$func_name" ]; and eval "$editor" $fish_func_path/$func_name
+    commandline -f repaint
 end
