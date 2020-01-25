@@ -45,3 +45,4 @@
 .config/fish/functions/voltrm.fish,.config/fish/functions/voltrm.fish
 .config/fish/functions/eff.fish,.config/fish/functions/eff.fish
 .config/fish/functions/chmod-r.fish,.config/fish/functions/chmod-r.fish
+.config/fish/fishfile,.config/fish/fishfile
