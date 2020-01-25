@@ -46,3 +46,4 @@
 .config/fish/functions/eff.fish,.config/fish/functions/eff.fish
 .config/fish/functions/chmod-r.fish,.config/fish/functions/chmod-r.fish
 .config/fish/fishfile,.config/fish/fishfile
+.config/fish/functions/ghq-remove.fish,.config/fish/functions/ghq-remove.fish
