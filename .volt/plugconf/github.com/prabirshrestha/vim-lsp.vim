@@ -32,5 +32,5 @@ endfunction
 " (the argument of :return must be list literal, and the elements are string)
 " e.g. return ['github.com/tyru/open-browser.vim']
 function! s:depends()
-  return []
+  return ['github.com/prabirshrestha/async.vim']
 endfunction
