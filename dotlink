@@ -47,3 +47,5 @@
 .config/fish/functions/chmod-r.fish,.config/fish/functions/chmod-r.fish
 .config/fish/fishfile,.config/fish/fishfile
 .config/fish/functions/ghq-remove.fish,.config/fish/functions/ghq-remove.fish
+.config/fish/functions/__volt_plugin_search.fish,.config/fish/functions/__volt_plugin_search.fish
+.config/fish/conf.d/volt_key_bindings.fish,.config/fish/conf.d/volt_key_bindings.fish
