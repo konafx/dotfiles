@@ -14,6 +14,11 @@ umask 022
 # set -x VAGRANT_WSL_WINDOWS_ACCESS_USER_HOME_PATH /mnt/z/Vagrant
 # set -x RUBYOPT "-W0"
 
+# pyenv
+# set -Ux PYENV_ROOT $HOME/.pyenv
+# set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+. (pyenv init - | psub)
+
 # Edit rc file
 alias ef='vim $HOME/.config/fish/config.fish'
 alias ev='vim $HOME/.vimrc'
