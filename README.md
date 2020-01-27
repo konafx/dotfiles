@@ -3,8 +3,8 @@
 ### Install [Go](https://github.com/golang/go)
 ```
 sudo add-apt-repository ppa:longsleep/golang-backports
-sudo apt-get update
-sudo apt-get install golang-go
+sudo apt update
+sudo apt install golang-go
 ```
 
 ### Configure PATH on fish
@@ -61,3 +61,32 @@ git remote set-url git@github.com:konafx/dotfiles.git
 ```
 
 check: `$ git fetch`
+
+## etc
+### pyenv
+#### インストール
+```
+$ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+$ set -xU PYENV_ROOT $HOME/.pyenv
+$ set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+    # eval "$(pyenv init -)"はfishじゃだめ
+```
+
+``` fish:.config/fish/config.fish
+. (pyenv init - | psub)
+```
+> [pyenv + fish 環境構築 - Qiita](https://qiita.com/tkmpypy/items/9bd9692ad44dcd5710da)
+
+#### pythonのインストール
+> ```
+> sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+> libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+> xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+> ```
+> [Common build problems · pyenv/pyenv Wiki](https://github.com/pyenv/pyenv/wiki/Common-build-problems)
+
+```
+$ pyenv install 3.8.1
+$ pyenv global 3.8.1
+```
+
