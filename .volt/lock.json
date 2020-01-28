@@ -81,11 +81,6 @@
       "type": "git",
       "path": "github.com/tpope/vim-fugitive",
       "version": "1e57d678bad1ffb7468e7dccc45401d1b096249a"
-    },
-    {
-      "type": "git",
-      "path": "github.com/tyru/open-browser.vim",
-      "version": "cd29e8c8db02cd7744728a8f77a829b967e5ff31"
     }
   ],
   "profiles": [
@@ -106,9 +101,7 @@
         "github.com/prabirshrestha/vim-lsp",
         "github.com/reireias/vim-cheatsheet",
         "github.com/scrooloose/nerdtree",
-        "github.com/scrooloose/syntastic",
-        "github.com/tpope/vim-fugitive",
-        "github.com/tyru/open-browser.vim"
+        "github.com/tpope/vim-fugitive"
       ]
     }
   ]
