@@ -40,7 +40,6 @@
 .config/fish/functions/dot_add_volt.fish,.config/fish/functions/dot_add_volt.fish
 .volt/plugconf,.volt/plugconf
 .config/fish/functions/reload.fish,.config/fish/functions/reload.fish
-.config/fish/functions/volt_to_scrapbox.fish,.config/fish/functions/volt_to_scrapbox.fish
 .config/fish/functions/git_author_cleaner.fish,.config/fish/functions/git_author_cleaner.fish
 .config/fish/functions/voltrm.fish,.config/fish/functions/voltrm.fish
 .config/fish/functions/eff.fish,.config/fish/functions/eff.fish
