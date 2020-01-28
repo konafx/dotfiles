@@ -90,3 +90,8 @@ $ pyenv install 3.8.1
 $ pyenv global 3.8.1
 ```
 
+### docker
+```
+curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
+curl https://raw.githubusercontent.com/docker/compose/master/contrib/completion/fish/docker-compose.fish -o ~/.config/fish/completions/docker-compose.fish
+```
