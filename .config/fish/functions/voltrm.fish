@@ -1,6 +1,6 @@
 # Enhanced `volt rm` with peco
 function voltrm
-    set -l repository (volt list | sed -r '1,2d; s/^[\ \t]+github\.com\///' | peco)
+    set -l repository (volt list | sed -r '1,2d; s/^[\ \t]+github\.com\///' | fzf)
     if test -n "$repository"
         volt rm $repository
     else
