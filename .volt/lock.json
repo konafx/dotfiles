@@ -25,7 +25,7 @@
     {
       "type": "git",
       "path": "github.com/mattn/vim-lsp-settings",
-      "version": "b6c8c4443261dc5f5f932143f3ace78c6bcf4923"
+      "version": "431fb236bfb6dd70b98c6c453a2dc48d780bcb74"
     },
     {
       "type": "git",
@@ -35,7 +35,7 @@
     {
       "type": "git",
       "path": "github.com/pangloss/vim-javascript",
-      "version": "2e4a8c485cdf601bb2f2761ea68c09750a0b82e0"
+      "version": "db595656304959dcc3805cf63ea9a430e3f01e8f"
     },
     {
       "type": "git",
@@ -60,7 +60,7 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "b9e68161933e398465c3c3d77ad21ea2596c499b"
+      "version": "47ad01195c346192c480511b7f20e30df676227f"
     },
     {
       "type": "git",
@@ -70,17 +70,12 @@
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "fec3e57ad23e4c268d07181d6afb858925b647a1"
-    },
-    {
-      "type": "git",
-      "path": "github.com/scrooloose/syntastic",
-      "version": "28bb72adbe5c610bdc07407ddb83898919e4645c"
+      "version": "26740d1157dc1befe2a088052e10cf00436a5003"
     },
     {
       "type": "git",
       "path": "github.com/tpope/vim-fugitive",
-      "version": "1e57d678bad1ffb7468e7dccc45401d1b096249a"
+      "version": "036fe0f08460ad64e3b2e06e3b7b299269c5ccc9"
     }
   ],
   "profiles": [
