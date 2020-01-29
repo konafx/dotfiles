@@ -1,23 +1,6 @@
 umask 022
-# set -x FZF_LEGACY_KEYBINDINGS 0
-# if test -x go
-#     set -x GOPATH $HOME/.go
-#     set -x PATH $PATH $GOPATH/bin
-# end
-# set -x VIMPATH $HOME/.vim/pack/mypackage/start
-# set -x VOLTPATH $HOME/.volt
-# 
-# set -x VAGRANT_WSL_ENABLE_WINDOWS_ACCESS 1
-# set -x PATH $PATH $HOME/.nvm/versions/node/v12.13.0/bin
-# set -x PATH $PATH "/mnt/c/Program Files/Oracle/VirtualBox"
-# set -x VAGRANT_WSL_WINDOWS_ACCESS_USER kon04
-# set -x VAGRANT_WSL_WINDOWS_ACCESS_USER_HOME_PATH /mnt/z/Vagrant
-# set -x RUBYOPT "-W0"
-
 # pyenv
-# set -Ux PYENV_ROOT $HOME/.pyenv
-# set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
-. (pyenv init - | psub)
+source (pyenv init - | psub)
 
 # Edit rc file
 alias ef='vim $HOME/.config/fish/config.fish'
