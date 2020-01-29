@@ -31,7 +31,7 @@ go get github.com/motemen/ghq
 go get github.com/ssh0/dot
 set -U DOT_DIR $HOME/.dotfiles
 set -U DOT_REPO https://github.com/<user>/dotfiles.git
-set -U DOT_SCR $GOROOT/src/dot
+set -U DOT_SCR $GOPATH/src/github.com/ssh0/dot
 ```
 
 ### Get plugin [fish-dot](https://github.com/re3turn/fish-dot)
@@ -70,20 +70,20 @@ dot clone && dot set
 git remote set-url git@github.com:konafx/dotfiles.git
 ```
 
-check: `$ git fetch`
+check: `git fetch`
 
 # etc
 ## pyenv
 ### インストール
 ```
-$ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-$ set -xU PYENV_ROOT $HOME/.pyenv
-$ set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+set -xU PYENV_ROOT $HOME/.pyenv
+set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
     # eval "$(pyenv init -)"はfishじゃだめ
 ```
 
 ``` fish:.config/fish/config.fish
-. (pyenv init - | psub)
+source (pyenv init - | psub)
 ```
 > [pyenv + fish 環境構築 - Qiita](https://qiita.com/tkmpypy/items/9bd9692ad44dcd5710da)
 
