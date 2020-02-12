@@ -1,6 +1,4 @@
 umask 022
-# pyenv
-source (pyenv init - | psub)
 
 # Edit rc file
 alias ef='vim $HOME/.config/fish/config.fish'
@@ -22,5 +20,3 @@ alias ssh_vagrant='sudo ssh -l vagrant -p 2222 -i /mnt/z/Vagrant/.vagrant/machin
 
 # bobthefish
 set -g theme_display_date yes
-
-thefuck --alias | source
