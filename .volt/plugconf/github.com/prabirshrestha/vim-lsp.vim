@@ -8,7 +8,6 @@ endfunction
 " Plugin configuration like the code written in vimrc.
 " This configuration is executed *after* a plugin is loaded.
 function! s:on_load_post()
-  let g:lsp_signature_help_enabled = 0
 endfunction
 
 " This function determines when a plugin is loaded.
