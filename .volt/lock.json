@@ -74,6 +74,11 @@
     },
     {
       "type": "git",
+      "path": "github.com/thinca/vim-quickrun",
+      "version": "f637c35b16d6e83cc71dababbda2a64eb29b3f5e"
+    },
+    {
+      "type": "git",
       "path": "github.com/tpope/vim-fugitive",
       "version": "036fe0f08460ad64e3b2e06e3b7b299269c5ccc9"
     }
@@ -96,6 +101,7 @@
         "github.com/prabirshrestha/vim-lsp",
         "github.com/reireias/vim-cheatsheet",
         "github.com/scrooloose/nerdtree",
+        "github.com/thinca/vim-quickrun",
         "github.com/tpope/vim-fugitive"
       ]
     }
