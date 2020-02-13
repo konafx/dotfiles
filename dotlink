@@ -48,3 +48,6 @@
 .config/fish/functions/ghq-remove.fish,.config/fish/functions/ghq-remove.fish
 .config/fish/functions/__volt_plugin_search.fish,.config/fish/functions/__volt_plugin_search.fish
 .config/fish/conf.d/volt_key_bindings.fish,.config/fish/conf.d/volt_key_bindings.fish
+.config/fish/conf.d/pipx_completions.fish,.config/fish/conf.d/pipx_completions.fish
+.config/fish/conf.d/plugin-thefuck_init.fish,.config/fish/conf.d/plugin-thefuck_init.fish
+.config/fish/conf.d/anyenv.fish,.config/fish/conf.d/anyenv.fish
