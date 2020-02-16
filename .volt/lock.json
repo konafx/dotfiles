@@ -14,18 +14,33 @@
     },
     {
       "type": "git",
+      "path": "github.com/dag/vim-fish",
+      "version": "50b95cbbcd09c046121367d49039710e9dc9c15f"
+    },
+    {
+      "type": "git",
       "path": "github.com/heavenshell/vim-jsdoc",
       "version": "b23073449d1df98ecfe73828079115e0d1d7573b"
     },
     {
       "type": "git",
       "path": "github.com/iamcco/markdown-preview.nvim",
-      "version": "827c819837948006169b0815b7c68091d6a72839"
+      "version": "9be1ff405a1bc17d8875c18517135b6167acc315"
+    },
+    {
+      "type": "git",
+      "path": "github.com/junegunn/fzf",
+      "version": "5b99f19dac5dfcdf1cbb322a73406e1edeb9ae23"
+    },
+    {
+      "type": "git",
+      "path": "github.com/junegunn/fzf.vim",
+      "version": "467c3277884240f7b5430f8f4d600e3415c38f3b"
     },
     {
       "type": "git",
       "path": "github.com/mattn/vim-lsp-settings",
-      "version": "431fb236bfb6dd70b98c6c453a2dc48d780bcb74"
+      "version": "aed10b6de257492b25c44bfb282c704444d6365d"
     },
     {
       "type": "git",
@@ -50,17 +65,17 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete-lsp.vim",
-      "version": "9e7b2492578dca86ed12b6352cb56d9fc8ac9a6e"
+      "version": "5c470ae8e58c8762dc4c669b38fa5649b57f53e3"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete.vim",
-      "version": "db3ab51ef6d42ac410afaea53fc0513afd0d5e25"
+      "version": "52f857a4c4c51abf6b29f4ce0b3db0aae992f619"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "47ad01195c346192c480511b7f20e30df676227f"
+      "version": "6e78f35aad2969285fd4e776a44035bd730f3389"
     },
     {
       "type": "git",
@@ -70,7 +85,7 @@
     {
       "type": "git",
       "path": "github.com/scrooloose/nerdtree",
-      "version": "26740d1157dc1befe2a088052e10cf00436a5003"
+      "version": "07612557ebb4118ef4a337faa7033d0270773c71"
     },
     {
       "type": "git",
@@ -80,7 +95,17 @@
     {
       "type": "git",
       "path": "github.com/tpope/vim-fugitive",
-      "version": "036fe0f08460ad64e3b2e06e3b7b299269c5ccc9"
+      "version": "460664018a8eaecd89fb2b095fad59c0e16f5f06"
+    },
+    {
+      "type": "git",
+      "path": "github.com/vim-airline/vim-airline",
+      "version": "099dd92eebe09ab27a483e381f2a708945e34330"
+    },
+    {
+      "type": "git",
+      "path": "github.com/vim-airline/vim-airline-themes",
+      "version": "6270e7d58828999da7239785ad4269899fab99b5"
     }
   ],
   "profiles": [
@@ -89,8 +114,11 @@
       "repos_path": [
         "github.com/Xuyuanp/nerdtree-git-plugin",
         "github.com/alvan/vim-closetag",
+        "github.com/dag/vim-fish",
         "github.com/heavenshell/vim-jsdoc",
         "github.com/iamcco/markdown-preview.nvim",
+        "github.com/junegunn/fzf",
+        "github.com/junegunn/fzf.vim",
         "github.com/mattn/vim-lsp-settings",
         "github.com/moll/vim-node",
         "github.com/pangloss/vim-javascript",
@@ -102,7 +130,9 @@
         "github.com/reireias/vim-cheatsheet",
         "github.com/scrooloose/nerdtree",
         "github.com/thinca/vim-quickrun",
-        "github.com/tpope/vim-fugitive"
+        "github.com/tpope/vim-fugitive",
+        "github.com/vim-airline/vim-airline",
+        "github.com/vim-airline/vim-airline-themes"
       ]
     }
   ]

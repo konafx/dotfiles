@@ -10,6 +10,7 @@ alias reload='exec fish'
 alias mkdir='mkdir -p'
 
 # shortcut alias
+alias v='vim'
 alias g='git'
 alias gst='git status'
 

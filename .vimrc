@@ -11,7 +11,6 @@ set list listchars=tab:\▸\-
 
 if has("autocmd")
   autocmd FileType vim,html,xhtml,vue setlocal tabstop=2  "markup lang
-  autocmd FileType fish,bash,sh setlocal tabstop=2        "shell script
 endif
 
 " cache
