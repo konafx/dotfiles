@@ -51,3 +51,4 @@
 .config/fish/conf.d/pipx_completions.fish,.config/fish/conf.d/pipx_completions.fish
 .config/fish/conf.d/plugin-thefuck_init.fish,.config/fish/conf.d/plugin-thefuck_init.fish
 .config/fish/conf.d/anyenv.fish,.config/fish/conf.d/anyenv.fish
+.config/gtk-3.0/gtk.css,.config/gtk-3.0/gtk.css
