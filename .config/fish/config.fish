@@ -1,7 +1,6 @@
 umask 022
 
 # Edit rc file
-alias ef='vim $HOME/.config/fish/config.fish'
 alias ev='vim $HOME/.vimrc'
 
 alias reload='exec fish'
