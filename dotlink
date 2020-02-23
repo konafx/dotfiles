@@ -52,3 +52,4 @@
 .config/fish/conf.d/anyenv.fish,.config/fish/conf.d/anyenv.fish
 .config/gtk-3.0/gtk.css,.config/gtk-3.0/gtk.css
 .volt/rc,.volt/rc
+.config/fish/functions/ev.fish,.config/fish/functions/ev.fish
