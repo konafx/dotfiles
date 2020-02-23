@@ -24,6 +24,11 @@
     },
     {
       "type": "git",
+      "path": "github.com/heavenshell/vim-pydocstring",
+      "version": "c2a4032917e844a5815f4d6cdf4a6727688a4d72"
+    },
+    {
+      "type": "git",
       "path": "github.com/iamcco/markdown-preview.nvim",
       "version": "9be1ff405a1bc17d8875c18517135b6167acc315"
     },
@@ -116,6 +121,7 @@
         "github.com/alvan/vim-closetag",
         "github.com/dag/vim-fish",
         "github.com/heavenshell/vim-jsdoc",
+        "github.com/heavenshell/vim-pydocstring",
         "github.com/iamcco/markdown-preview.nvim",
         "github.com/junegunn/fzf",
         "github.com/junegunn/fzf.vim",

@@ -21,7 +21,7 @@ endfunction
 " This function must contain 'return "<str>"' code.
 " (the argument of :return must be string literal)
 function! s:loaded_on()
-  return 'start'
+  return 'filetype=python'
 endfunction
 
 " Dependencies of this plugin.
