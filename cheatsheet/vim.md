@@ -1,5 +1,41 @@
 # Vim Cheat Sheet
-## Word
+## NOW
+- `.` : repeat cmd
+- `r{char}`: Replace cursol to {char}
+- In INSERT mode
+    - `Ctrl-W`: delete word (back cursor)
+
+## Move
 - `w` : word next
 - `b` : word prev
 - `e` : word next tail
+- `f{char}` : right {char}
+- 'F{char}` : left {char}
+    - `;/,`: repeat `f/F/t/T` forward/opposite
+- `}/{`: paragraph（段落）
+
+## Edit
+- `c{object}`: `d`の`s`版
+- `gU{object}`: Upper
+- `gu{object}`: Lower
+- `g~{object}`: Switch Upper/Lower
+- `gJ`: same `J` without inserting space
+
+## Object
+- `iw`: word
+- `aw`: word with white space
+- `ip`: paragraph
+- `ap`: paragraph with last white line
+- Block: `[ ]`, `( )`, `< >`, `" "`, `' '`
+    - `t`: tag of html, xml
+
+## Window
+- `Ctrl-W`
+    - `S`: Split horizontal
+    - `v`: Split Vertical
+    - `r`: Rotate downwards/rightwards
+    - `R`: Rotate upwards/leftwards
+    - `x`: Exchange current with next
+    - `HJKL`: Move to the left/bottom/top/right
+        - Using it, switch vertical/horizontal
+    - `T`: Move to newtab
