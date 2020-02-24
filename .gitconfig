@@ -1,0 +1,26 @@
+[user]
+    name = konafx
+    email = afxlieonon@gmail.com
+	signingkey = EAF174E029475BFF!
+
+[alias]
+    graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cn %Cred%d %Creset%s'
+    gr = graph
+    br = branch
+    st = status
+    cm = commit
+    sw = switch
+
+[ghq]
+    root = ~/.ghq
+
+[core]
+    editor = vim
+[receive]
+    #denyNonFastforwards = false
+[include]
+    path = ~/.gitconfig.local
+[gpg]
+    program = gpg
+[commit]
+    gpgsign = true
