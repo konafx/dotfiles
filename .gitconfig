@@ -18,9 +18,11 @@
     editor = vim
 [receive]
     #denyNonFastforwards = false
-[include]
-    path = ~/.gitconfig.local
 [gpg]
     program = gpg
 [commit]
     gpgsign = true
+[pull]
+    rebase = true
+[include]
+    path = ~/.gitconfig.local
