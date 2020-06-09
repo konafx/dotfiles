@@ -26,3 +26,6 @@
     rebase = true
 [include]
     path = ~/.gitconfig.local
+[url "git@github.com:"]
+    pushInstaedOf = git://github.com/
+    pushInstaedOf = https://github.com/
