@@ -13,6 +13,8 @@
 
 [ghq]
     root = ~/.ghq
+[github]
+    user = konafx
 
 [core]
     editor = vim
