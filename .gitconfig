@@ -18,6 +18,8 @@
 
 [core]
     editor = vim
+    whitespace = cr-at-eol
+    autocrlf = true
 [receive]
     #denyNonFastforwards = false
 [gpg]
