@@ -6,10 +6,20 @@
 [alias]
     graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cn %Cred%d %Creset%s'
     gr = graph
+    b = branch
     br = branch
+    s = status
     st = status
+    a = add
+    ad = add
     cm = commit
     sw = switch
+    # staged diff
+    ds = diff --cached
+    cp = cherry-pick
+    sp = stash pop
+    ss = stash save
+    sl = stash list
 
 [ghq]
     root = ~/.ghq
