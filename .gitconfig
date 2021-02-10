@@ -1,7 +1,7 @@
 [user]
     name = konafx
     email = afxlieonon@gmail.com
-    signingkey = EAF174E029475BFF!
+    signingkey = 593F096C970D515C!
 
 [alias]
     graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cn %Cred%d %Creset%s'
