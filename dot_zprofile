@@ -1,0 +1,27 @@
+source "$HOME/.profile"
+
+export DENO_INSTALL="$HOME/.deno"
+path=($DENO_INSTALL/bin(N-) $path)
+
+export DOT_REPO="https://github.com/konafx/dotfiles.git"
+export DOT_DIR="$HOME/.dotfiles"
+fpath=($HOME/.zsh/dot(N-/) $fpath)
+source $HOME/.zsh/dot/dot.sh
+
+# fzf
+export FZF_TMUX=1 # enable
+export FZF_TMUX_OPTS='-p 80%' # popup
+export TMUX_FZF_OPTIONS='-p -w 73% -h 73% -m'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Finally
+export PATH
+export FPATH
+
+# xclipを使いたかった名残
+# 結局うまくいかなかった
+#IFS=' '
+#set -- $(echo $SSH_CONNECTION)
+#export DISPLAY=$1:0.0
+

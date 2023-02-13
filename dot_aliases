@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# ls {{{
+alias ls='ls --color=auto'
+alias lst='ls -ltr'
+alias l='ls'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -la'
+# }}}
+
+alias sudo='sudo '
+
+alias so='source'
+alias v='vim'
+alias vi='vim'
+alias vz='vim ~/.zshrc'
+alias c='cdr'
+alias ..='c ../'
+# historyに日付を表示
+alias h="fc -lt '%F %T' 1"
+alias cp='cp -i'
+alias rm='rm -i'
+alias mkdir='mkdir -p'
+alias back='pushd'
+alias diff='diff -U1'
+
+alias g='git'
+alias gst='git status -sb'
+alias gbr='git branch -vva'
+
+alias t='tmux'
+
+alias d='docker'
+alias dc='docker-compose'
+
+DISTRO=$(awk -F= '/^ID=/{print $2}' /etc/os-release)
+if [ "$DISTRO" = "arch" ]; then
+    alias pc='pacman'
+fi
+
+if [ "$DISTRO" = "ubuntu" ]; then
+    alias bat='batcat'
+    alias fd='fdfind'
+fi
+
+alias tf='terraform'
+
+alias tmux='tmux -u'

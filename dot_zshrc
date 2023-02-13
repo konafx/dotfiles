@@ -1,0 +1,223 @@
+setopt IGNOREEOF
+
+# 環境変数 {{{
+# export TRANSPARENT_TERM=1
+# }}}
+
+# LOCALE {{{
+# export LC_TIME=en_US.utf-8
+# export LANG=ja_JP.utf-8
+# }}}
+
+# Colored
+autoload -Uz colors
+colors
+
+# completion
+autoload -Uz compinit
+compinit
+
+zstyle ':completion:*' menu true select
+zstyle ':completion:*:rm:*' menu false
+
+
+# 他のターミナルとヒストリーを共有
+setopt share_history
+
+# ヒストリーに重複を表示しない
+setopt histignorealldups
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+# cdコマンドを省略して、ディレクトリ名のみの入力で移動
+setopt auto_cd
+
+# 自動でpushdを実行
+setopt auto_pushd
+
+# pushdから重複を削除
+setopt pushd_ignore_dups
+
+# コマンドミスを修正
+setopt correct
+
+# alias {{{
+alias -g @l='| less'
+alias -g @h='| head'
+alias -g @g='| grep'
+alias -g @gi='| grep -ri'
+
+source $HOME/.aliases
+# }}}
+
+# cdの後にlsを実行
+chpwd() { ls -ltr --color=auto }
+
+# どこからでも参照できるディレクトリパス
+cdpath=(~)
+
+### Added by Zinit's installer {{{
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/z-a-rust \
+    zdharma-continuum/z-a-as-monitor \
+    zdharma-continuum/z-a-patch-dl \
+    zdharma-continuum/z-a-bin-gem-node
+
+### End of Zinit's installer chunk }}}
+
+zinit ice pick"async.zsh" src"pure.zsh"
+zinit light sindresorhus/pure
+
+zinit ice blockf
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zaw
+zinit light zdharma-continuum/history-search-multi-word
+
+zinit ice as"completion"
+zinit snippet 'https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose'
+
+zinit ice as"completion"
+zinit snippet 'https://raw.githubusercontent.com/x-motemen/ghq/master/misc/zsh/_ghq'
+
+# for bash_completion
+autoload -U +X bashcompinit && bashcompinit
+
+# fzf
+# export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+# awscli
+complete -C '/usr/local/bin/aws_completer' aws
+
+DISTRO=$(awk -F= '/^ID=/{print $2}' /etc/os-release)
+cmd_bat='bat'
+cmd_fd='fd'
+if [ "$DISTRO" = "ubuntu" ]; then
+    cmd_bat='batcat'
+    cmd_fd='fdfind'
+fi
+
+# ghq fzf
+function ghq-fzf() {
+    local src=$(ghq list | fzf-tmux -p 80% --preview "${cmd_bat} --color=always --style=header,grid --line-range :80 $(ghq root)/{}/README.*")
+    if [ -n "$src" ]; then
+        BUFFER="cd $(ghq root)/$src && tmux rename-window $(basename $src)"
+        zle accept-line
+    fi
+    zle -R -c
+}
+zle -N ghq-fzf
+
+function ghq-updated-fzf() {
+    local sorted=$(ghq list | python -c "import os; import sys; print(''.join(sorted(sys.stdin.readlines(), key=lambda path: os.stat(f'$(ghq root)/{path.strip()}').st_mtime, reverse=True)))")
+    local src=$(echo $sorted | fzf-tmux -p 80% --preview "${cmd_bat} --color=always --style=header,grid --line-range :80 $(ghq root)/{}/README.*")
+    if [ -n "$src" ]; then
+        BUFFER="cd $(ghq root)/$src && tmux rename-window $(basename $src)"
+        zle accept-line
+    fi
+    zle -R -c
+}
+zle -N ghq-updated-fzf
+
+function git-status() {
+    if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
+        echo git status -sb
+        git status -sb
+    fi
+    zle -R
+}
+zle -N git-status
+
+# fzf-select-ghq-tmux
+function ghq-tmux() {
+  local selected_dir=$(ghq list -p | fzf-tmux -p 80% --reverse --query "$LBUFFER" --preview "${cmd_bat} --color=always --style=plain \$(find {} -maxdepth 1 | grep -i -e 'readme\(.\.*\)\?')")
+  if [ -n "$selected_dir" ]; then
+    local repo=$(basename ${selected_dir})
+    BUFFER="tmux neww -S -n $repo -c $selected_dir"
+    zle accept-line
+  fi
+}
+zle -N ghq-tmux
+
+# yq
+yq() {
+    docker run --rm -i -v "${PWD}":/workdir mikefarah/yq "$@"
+}
+
+# tty
+export GPG_TTY=$(tty)
+complete -o nospace -C /usr/local/bin/bit bit
+
+# The next line enables shell command completion for gcloud.
+if [ -f '$HOME/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '$HOME/.cache/paru/clone/google-cloud-sdk/pkg/google-cloud-sdk/opt/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/.cache/paru/clone/google-cloud-sdk/pkg/google-cloud-sdk/opt/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '$HOME/.cache/paru/clone/google-cloud-sdk/pkg/google-cloud-sdk/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/.cache/paru/clone/google-cloud-sdk/pkg/google-cloud-sdk/opt/google-cloud-sdk/completion.zsh.inc'; fi
+
+# cdr, add-zsh-hook を有効にする
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+
+# cdr の設定
+local cache_dir="$HOME/.cache/shell"
+local chpwd_recent_dirs="$cache_dir/chpwd-recent-dirs"
+zstyle ':completion:*' recent-dirs-insert both
+zstyle ':chpwd:*' recent-dirs-max 500
+zstyle ':chpwd:*' recent-dirs-default true
+zstyle ':chpwd:*' recent-dirs-file $chpwd_recent_dirs
+zstyle ':chpwd:*' recent-dirs-pushd true
+[ ! -e $chpwd_recent_dirs ] && mkdir -p $cache_dir; touch $chpwd_recent_dirs
+
+complete -o nospace -C /usr/bin/terraform terraform
+
+# bindkeys {{{
+# reset
+bindkey -d
+# emacs
+bindkey -e
+# ghq
+bindkey '^g^g' ghq-fzf
+bindkey '^gg' ghq-updated-fzf
+bindkey '^g^t' ghq-tmux
+bindkey '^gt' ghq-tmux
+# git staths
+bindkey '^g^z' git-status
+bindkey '^gz' git-status
+# util key
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+bindkey '^[[3~' delete-char
+# zaw
+bindkey '^@' zaw-cdr
+bindkey '^r' zaw-history
+bindkey '^f^f' zaw-git-files
+bindkey '^ff' zaw-git-files
+bindkey '^f^b' zaw-git-branches
+bindkey '^fb' zaw-git-branches
+bindkey '^f^p' zaw-process
+bindkey '^fp' zaw-process
+bindkey '^t' zaw-tmux
+# }}}
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+[ -f ~/opt/asdf-vm/asdf.sh ] && source /opt/asdf-vm/asdf.sh
