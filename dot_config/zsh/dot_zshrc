@@ -83,7 +83,6 @@ autoload -Uz _zinit
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \
-	@zdharma-continuum/zinit-annex-rust \
 	@zdharma-continuum/zinit-annex-readurl \
 	@zdharma-continuum/zinit-annex-patch-dl \
 	@zdharma-continuum/zinit-annex-bin-gem-node \
@@ -98,18 +97,12 @@ zinit wait"1c" lucid \
 	@zsh-users/zaw \
 	@zdharma-continuum/history-search-multi-word
 
-# rust
-zinit wait"0a" lucid \
-	if"! command -v rustc >/dev/null" id-as"rust" rustup as"command" \
-	sbin"bin/rustc" \
-	atload="export CARGO_HOME=$PWD RUSTUP_HOME=$PWD/rustup" \
-	for @zdharma-continuum/null
-
 # minimum propmt
 zinit \
 	compile"(pure|async).zsh" multisrc"(pure|async).zsh" \
 	for @sindresorhus/pure
 
+# program {{{
 # zinit pack-ice requires `jq`
 zinit wait"0a" lucid \
 	from"gh-r" sbin"* -> jq" nocompile \
@@ -129,10 +122,6 @@ zinit wait"1c" lucid \
 	atpull"%atclone" \
 	src"init.zsh" nocompile"!" lbin"!" \
 	light-mode for @ajeetdsouza/zoxide
-
-zinit wait"2" lucid \
-	as"completion" for \
-	src"contrib/completion/zsh/_docker" depth"1" @docker/cli
 
 # git repository manager
 zinit wait"0c" lucid \
@@ -179,10 +168,6 @@ zinit wait"1c" lucid \
 	atload"source $ZRCDIR/pluginconfig/gh_atload.zsh" \
 	for @cli/cli
 
-zinit wait lucid \
-	configure"--disable-utf8proc" make \
-	for @tmux/tmux
-
 # tmux plugin manager
 zinit wait lucid \
 	as"null" id-as"tpm" \
@@ -193,6 +178,17 @@ zinit wait lucid \
 	for @tmux-plugins/tpm
 
 zinit wait"2" pack"bgn" for fzf
+
+### End of program }}}
+
+# completions
+zinit wait"2" lucid \
+	as"completion" for \
+	src"contrib/completion/zsh/_docker" depth"1" @docker/cli
+
+zinit wait lucid \
+	configure"--disable-utf8proc" make \
+	for @tmux/tmux
 
 # for bash_completion
 autoload -U +X bashcompinit && bashcompinit
@@ -206,7 +202,7 @@ DISTRO=$(awk -F= '/^ID=/{print $2}' /etc/os-release)
 
 # ghq fzf
 function ghq-fzf() {
-	local src=$(ghq list | fzf-tmux -p 80% --preview "${cmd_bat} --color=always --style=header,grid --line-range :80 $(ghq root)/{}/README.*")
+	local src=$(ghq list | fzf-tmux -p 80% --preview "${cmd_bat} --style=header,grid --line-range :80 $(ghq root)/{}/README.*")
 	if [ -n "$src" ]; then
 		BUFFER="cd $(ghq root)/$src && tmux rename-window $(basename $src)"
 		zle accept-line
@@ -217,7 +213,7 @@ zle -N ghq-fzf
 
 function ghq-updated-fzf() {
 	local sorted=$(ghq list | python -c "import os; import sys; print(''.join(sorted(sys.stdin.readlines(), key=lambda path: os.stat(f'$(ghq root)/{path.strip()}').st_mtime, reverse=True)))")
-	local src=$(echo $sorted | fzf-tmux -p 80% --preview "${cmd_bat} --color=always --style=header,grid --line-range :80 $(ghq root)/{}/README.*")
+	local src=$(echo $sorted | fzf-tmux -p 80% --preview "${cmd_bat} --style=header,grid --line-range :80 $(ghq root)/{}/README.*")
 	if [ -n "$src" ]; then
 		BUFFER="cd $(ghq root)/$src && tmux rename-window $(basename $src)"
 		zle accept-line
