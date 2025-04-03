@@ -5,3 +5,7 @@ bun = "latest"
 python = "3"
 usage = "latest"
 yarn = "latest"
+"pipx:git-filter-repo" = "latest"
+
+[settings]
+experimental = true
