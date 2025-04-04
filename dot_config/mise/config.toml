@@ -2,10 +2,11 @@
 node = "latest"
 deno = "latest"
 bun = "latest"
-python = "3"
+python = "latest"
 usage = "latest"
 yarn = "latest"
 "pipx:git-filter-repo" = "latest"
+"pipx:tldr" = "latest"
 
 [settings]
 experimental = true
