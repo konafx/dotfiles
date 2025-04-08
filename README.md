@@ -21,8 +21,15 @@ chezmoi update
 [Zsh](https://www.zsh.org/)
 shell
 
+Install
 ```sh
 chsh -s $(which zsh)
+```
+
+Config
+```sh
+# /etc/zsh/zshenv
+export ZDOTDIR="$HOME"/.config/zsh
 ```
 
 ### zinit
