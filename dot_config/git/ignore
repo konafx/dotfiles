@@ -2,3 +2,6 @@
 
 # anyenv local version
 .*-version
+
+# git worktree
+.worktree

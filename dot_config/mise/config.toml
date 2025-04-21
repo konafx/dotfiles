@@ -5,8 +5,13 @@ bun = "latest"
 python = "latest"
 usage = "latest"
 yarn = "latest"
-"pipx:git-filter-repo" = "latest"
+ghq = "latest"
+fzf = "latest"
+uv = "latest"
 "pipx:tldr" = "latest"
 
 [settings]
 experimental = true
+
+[settings.pipx]
+uvx = true
