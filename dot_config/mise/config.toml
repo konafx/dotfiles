@@ -9,6 +9,8 @@ ghq = "latest"
 fzf = "latest"
 uv = "latest"
 "pipx:tldr" = "latest"
+pnpm = "10.9.0"
+duckdb = "latest"
 
 [settings]
 experimental = true
