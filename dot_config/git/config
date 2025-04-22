@@ -21,6 +21,17 @@
     ft = fetch
     ftp = fetch -p
     ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
+    w = worktree
+	wswitch = "!f() { \
+		target=$1; \
+		path=$(git worktree list --porcelain | awk '/^branch/ {b=$2} /^worktree/ {p=$2; if (b==\"refs/heads/'$target'\") print p}'); \
+		if [ -n \"$path\" ] && [ -d \"$path\" ]; then \
+			echo \"Worktree for branch '$target' found at $path\"; \
+			cd \"$path\"; \
+		else \
+			git switch \"$target\"; \
+		fi; \
+	}; f"
 [ghq]
 	# default
     root = ~/repos

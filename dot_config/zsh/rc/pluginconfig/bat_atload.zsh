@@ -1,2 +1,2 @@
 setopt no_aliases
-alias cat=bat
+alias cat='bat -p'
