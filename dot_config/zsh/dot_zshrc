@@ -58,6 +58,17 @@ alias -g @gi='| grep -ri'
 source $HOME/.aliases
 # End of Alias }}}
 
+# Alias Function {{{
+curl() {
+	if [[ "$1" == "--no-compress" ]]; then
+		shift
+		command curl "$@"
+	else
+		command curl --compressed "$@"
+	fi
+}
+# }}}
+
 # cdの後にlsを実行
 # chpwd() { ls -ltr --color=auto }
 

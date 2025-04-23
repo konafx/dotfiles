@@ -11,6 +11,8 @@
     ad = add
     cm = commit
     sw = switch
+	d = diff
+	df = diff
     # staged diff
     ds = diff --cached
     cp = cherry-pick
