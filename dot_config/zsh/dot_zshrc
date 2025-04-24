@@ -55,19 +55,9 @@ alias -g @h='| head'
 alias -g @g='| grep'
 alias -g @gi='| grep -ri'
 
-source $HOME/.aliases
+# replace alias to abbr (zabrze)
+# source $HOME/.aliases
 # End of Alias }}}
-
-# Alias Function {{{
-curl() {
-	if [[ "$1" == "--no-compress" ]]; then
-		shift
-		command curl "$@"
-	else
-		command curl --compressed "$@"
-	fi
-}
-# }}}
 
 # cdの後にlsを実行
 # chpwd() { ls -ltr --color=auto }
@@ -112,6 +102,13 @@ zinit wait"1c" lucid \
 zinit \
 	compile"(pure|async).zsh" multisrc"(pure|async).zsh" \
 	for @sindresorhus/pure
+
+# abbreviation
+# 依存コマンドの読み込み完了を待つため2z
+zinit wait"2z" blockf light-mode \
+	as"program" from"gh-r" for \
+	atload"source $ZRCDIR/pluginconfig/zabrze_atload.zsh" \
+	Ryooooooga/zabrze
 
 # program {{{
 # zinit pack-ice requires `jq`

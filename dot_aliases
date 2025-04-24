@@ -3,6 +3,9 @@
 # ls {{{
 # avoid record
 alias ls='ls --color=auto'
+# TODO(fix): exa使用時のエラー
+# eza: Option --time (-t) has no "r" setting (choices: modified, changed, accessed, created)
+# To sort oldest files last, try "--sort oldest", or just "-sold"
 alias lst='ls -ltr'
 alias l='ls'
 alias la='ls -a'
