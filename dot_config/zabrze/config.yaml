@@ -40,193 +40,6 @@ abbrevs:
     abbr: curl
     snippet: curl --compressed
 
-    # git {{{
-    # command git {{{
-  - name: g
-    abbr: g
-    snippet: git
-    # }}}
-
-    # git add {{{
-  - name: gad
-    abbr: gad
-    snippet: git add .
-
-  - name: git add
-    abbr: a
-    snippet: add
-    global: true
-    context: '^git\s'
-
-  - name: git add .
-    abbr: ad
-    snippet: add .
-    global: true
-    context: '^git\s'
-    # }}}
-
-    # git diff {{{
-  - name: git diff
-    abbr: d
-    snippet: diff
-    global: true
-    context: '^git\s'
-
-  - name: git diff --staged
-    abbr: ds
-    snippet: diff --staged
-    global: true
-    context: '^git\s'
-    # }}}
-
-    # git commit {{{
-  - name: git commit
-    abbr: c
-    snippet: commit
-    global: true
-    context: '^git\s'
-
-  - name: git commit -m
-    abbr: cm
-    snippet: commit -m "{}"
-    cursor: "{}"
-    global: true
-    context: '^git\s'
-    # }}}
-
-    # git push {{{
-  - name: gpoh
-    abbr: gpoh
-    snippet: git push origin HEAD
-
-  - name: git push
-    abbr: ph
-    snippet: push
-    global: true
-    context: '^git\s'
-
-  - name: git push --force-with-lease
-    abbr: f
-    snippet: --force-with-lease
-    global: true
-    context: '^git\spush\s'
-    # }}}
-
-    # git fetch {{{
-  - name: git fetch
-    abbr: f
-    snippet: fetch
-    global: true
-    context: '^git\s'
-
-  - name: git fetch -p
-    abbr: fp
-    snippet: fetch -p
-    global: true
-    context: '^git\s'
-    # }}}
-
-    # git pull {{{
-  - name: git pull
-    abbr: pl
-    snippet: pull
-    global: true
-    context: '^git\s'
-    # }}}
-
-    # git branch {{{
-  - name: git branch
-    abbr: b
-    snippet: branch
-    global: true
-    context: '^git\s'
-
-  - name: git branch -v
-    abbr: br
-    snippet: branch -v
-    global: true
-    context: '^git\s'
-    # }}}
-
-    # git status {{{
-  - name: gst
-    abbr: gst
-    snippet: git status -sb
-
-  - name: git status
-    abbr: s
-    snippet: status
-    global: true
-    context: '^git\s'
-    # }}}
-
-    # git log {{{
-  - name: gl
-    abbr: gl
-    snippet: git log --pretty=format:"%C(auto)%h (%C(blue)%cd%C(auto))%d %s $Cblue" --date=format:"%Y/%m/%d %H:%M:%S" -n 10
-
-  - name: git log
-    abbr: l
-    snippet: log
-    global: true
-    context: '^git\s'
-
-  - name: git graph
-    abbr: gr
-    snippet: graph
-    global: true
-    context: '^git\s'
-
-    # note: g gr[space]からはgit graphまで.
-    # TODO: ↑を一気にlog --graph...にしたい
-  - name: git log graph
-    abbr: graph
-    snippet: log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cn %Cred%d %Creset%s'
-    global: true
-    context: '^git\s'
-    # }}}
-
-    # git switch {{{
-  - name: git switch
-    abbr: sw
-    snippet: switch
-    global: true
-    context: '^git\s'
-    # }}}
-
-    # git stash {{{
-  - name: git stash
-    abbr: sh
-    snippet: stash
-    global: true
-    context: '^git\s'
-
-    # Need message
-  - name: git stash push -m
-    abbr: push
-    snippet: push -m
-    global: true
-    context: '^git\sstash\s'
-    # }}}
-
-    # git worktree {{{
-  - name: git worktree
-    abbr: w
-    snippet: worktree
-    global: true
-    context: '^git\s'
-    # }}}
-
-    # git misc {{{
-  - name: git branch name
-    abbr: B
-    snippet: $(git symbolic-ref --short HEAD)
-    evaluate: true
-    global: true
-    context: '^git\s'
-    # }}}
-    # }}} -- git
-
   - name: tmux -u
     abbr: t
     snippet: tmux -u
@@ -241,12 +54,13 @@ abbrevs:
     snippet: docker compose
 
   - name: docker compose
-    abbr: c
-    snippet: docker compose
+    abbr-pattern: ^co?$
+    snippet: compose
     global: true
-    context: '^docker\s'
+    context: '^docker\s+'
     # }}}
 
+    # chezmoi {{{
   - name: cz
     abbr: cz
     snippet: chezmoi
@@ -274,6 +88,7 @@ abbrevs:
     snippet: add
     global: true
     context: '^chezmoi\s'
+    # }}}
 
     # suffix {{{
   - name: '>/dev/null 2>&1'

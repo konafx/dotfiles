@@ -1,0 +1,198 @@
+.contexts:
+  - &global ^git\s
+  - &subcommand ^git\s+\S+$
+
+abbrevs:
+  - name: g
+    abbr: g
+    snippet: git
+
+    # git add {{{
+  - name: gad
+    abbr: gad
+    snippet: git add .
+
+  - name: git add
+    abbr-pattern: ^ad?$
+    snippet: add
+    global: true
+    context: *subcommand
+
+  - name: add -A
+    abbr: aa
+    snippet: add -vA
+    global: true
+    context: *subcommand
+    # }}}
+
+    # git diff {{{
+  - name: git diff
+    abbr: d
+    snippet: diff
+    global: true
+    context: *subcommand
+
+  - name: git diff --staged
+    abbr: ds
+    snippet: diff --staged
+    global: true
+    context: *subcommand
+    # }}}
+
+    # git commit {{{
+  - name: git commit
+    abbr: c
+    snippet: commit
+    global: true
+    context: *subcommand
+
+  - name: git commit -m
+    abbr: cm
+    snippet: commit -m "{}"
+    cursor: "{}"
+    global: true
+    context: *subcommand
+
+  - name: git cam
+    abbr: cam
+    snippet: commit --amend --no-edit
+    global: true
+    context: *subcommand
+    # }}}
+
+    # git push {{{
+  - name: gpoh
+    abbr: gpoh
+    snippet: git push origin HEAD
+
+  - name: git push
+    abbr: ph
+    snippet: push
+    global: true
+    context: *subcommand
+
+  - name: git push --force-with-lease
+    abbr: f
+    snippet: --force-with-lease
+    global: true
+    context: '^git\s+push\s'
+    # }}}
+
+    # git fetch {{{
+  - name: git fetch
+    abbr-pattern: ^fe?$
+    snippet: fetch
+    global: true
+    context: *subcommand
+
+  - name: git fetch -p
+    abbr: fp
+    snippet: fetch -p
+    global: true
+    context: *subcommand
+    # }}}
+
+    # git pull {{{
+  - name: git pull
+    abbr: pl
+    snippet: pull
+    global: true
+    context: *subcommand
+    # }}}
+
+    # git branch {{{
+  - name: git branch
+    abbr: b
+    snippet: branch
+    global: true
+    context: *subcommand
+
+  - name: git branch -v
+    abbr: br
+    snippet: branch -v
+    global: true
+    context: *subcommand
+    # }}}
+
+    # git status {{{
+  - name: gst
+    abbr: gst
+    snippet: git status -sb
+
+  - name: git status
+    abbr: s
+    snippet: status
+    global: true
+    context: *subcommand
+    # }}}
+
+    # git log {{{
+  - name: gl
+    abbr: gl
+    snippet: git log --pretty=format:"%C(auto)%h (%C(blue)%cd%C(auto))%d %s $Cblue" --date=format:"%Y/%m/%d %H:%M:%S" -n 10
+
+  - name: git log
+    abbr: l
+    snippet: log
+    global: true
+    context: *subcommand
+
+  - name: git graph
+    abbr: gr
+    snippet: graph
+    global: true
+    context: *subcommand
+
+    # note: g gr[space]からはgit graphまで.
+    # TODO: ↑を一気にlog --graph...にしたい
+  - name: git log graph
+    abbr: graph
+    snippet: log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cn %Cred%d %Creset%s'
+    global: true
+    context: *subcommand
+    # }}}
+
+    # git switch {{{
+  - name: git switch
+    abbr: sw
+    snippet: switch
+    global: true
+    context: *subcommand
+    # }}}
+
+    # git stash {{{
+  - name: git stash
+    abbr: sh
+    snippet: stash
+    global: true
+    context: *subcommand
+
+  - name: git stash push
+    abbr: ph
+    snippet: push -m
+    global: true
+    context: '^git\s+stash\s+'
+
+    # Need message
+  - name: git stash push -m
+    abbr: push
+    snippet: push -m
+    global: true
+    context: '^git\s+stash\s+push'
+    # }}}
+
+    # git worktree {{{
+  - name: git worktree
+    abbr: w
+    snippet: worktree
+    global: true
+    context: *subcommand
+    # }}}
+
+    # git misc {{{
+  - name: git branch name
+    abbr: B
+    snippet: $(git symbolic-ref --short HEAD)
+    evaluate: true
+    global: true
+    # }}}
