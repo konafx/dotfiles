@@ -10,30 +10,23 @@ abbrevs:
   - name: ll
     abbr: ll
     snippet: ls -l
-    if: (( ! type eza &>/dev/null 2>&1 ))
 
   - name: la
     abbr: la
     snippet: ls -a
-    if: (( ! type eza &>/dev/null 2>&1 ))
 
   - name: lla
     abbr: lla
     snippet: ls -la
-    if: (( ! type eza &>/dev/null 2>&1 ))
 
     # historyに日付を表示
   - name: h
     abbr: h
     snippet: fc -lt '%F %T' 1
 
-  - name: safe cp
-    abbr: cp
-    snippet: cp -i
-
-  - name: safe rm
-    abbr: rm
-    snippet: rm -i
+  - name: safe
+    abbr-pattern: ^(cp|mv|rm)$
+    snippet: $abbr -i
 
   - name: mkdir with parents
     abbr: mkdir
@@ -60,8 +53,14 @@ abbrevs:
     snippet: git add .
 
   - name: git add
-    abbr: add
+    abbr: a
     snippet: add
+    global: true
+    context: '^git\s'
+
+  - name: git add .
+    abbr: ad
+    snippet: add .
     global: true
     context: '^git\s'
     # }}}
@@ -101,7 +100,7 @@ abbrevs:
     snippet: git push origin HEAD
 
   - name: git push
-    abbr: ps
+    abbr: ph
     snippet: push
     global: true
     context: '^git\s'
