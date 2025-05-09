@@ -27,6 +27,7 @@ abbrevs:
   - name: safe
     abbr-pattern: ^(cp|mv|rm)$
     snippet: $abbr -i
+    evaluate: true
 
   - name: mkdir with parents
     abbr: mkdir
