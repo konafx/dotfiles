@@ -1,0 +1,32 @@
+.contexts:
+  - &global ^chezmoi\s
+  - &subcommand ^chezmoi\s+\S+$
+
+abbrevs:
+  - name: cz
+    abbr: cz
+    snippet: chezmoi
+
+  - name: chezmoi edit
+    abbr-pattern: ^ed?i?$
+    snippet: edit
+    global: true
+    context: *subcommand
+
+  - name: chezmoi status
+    abbr-pattern: ^st?a?$
+    snippet: status
+    global: true
+    context: *subcommand
+
+  - name: chezmoi apply
+    abbr-pattern: ^app?l?$
+    snippet: apply
+    global: true
+    context: *subcommand
+
+  - name: chezmoi add
+    abbr-pattern: ^ad?$
+    snippet: add
+    global: true
+    context: *subcommand

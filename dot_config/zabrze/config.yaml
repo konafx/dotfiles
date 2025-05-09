@@ -60,36 +60,6 @@ abbrevs:
     context: '^docker\s+'
     # }}}
 
-    # chezmoi {{{
-  - name: cz
-    abbr: cz
-    snippet: chezmoi
-
-  - name: chezmoi edit
-    abbr: e
-    snippet: edit
-    global: true
-    context: '^chezmoi\s'
-
-  - name: chezmoi status
-    abbr: s
-    snippet: status
-    global: true
-    context: '^chezmoi\s'
-
-  - name: chezmoi apply
-    abbr: ap
-    snippet: apply
-    global: true
-    context: '^chezmoi\s'
-
-  - name: chezmoi add
-    abbr: a
-    snippet: add
-    global: true
-    context: '^chezmoi\s'
-    # }}}
-
     # suffix {{{
   - name: '>/dev/null 2>&1'
     abbr: 'null'
