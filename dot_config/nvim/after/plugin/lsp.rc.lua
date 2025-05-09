@@ -10,12 +10,6 @@ if not ok then
 	return
 end
 
-local ok, lspconfig = pcall(require, 'lspconfig')
-if not ok then
-	print('nvim-lspconfig is not installed')
-	return
-end
-
 -- https://scrapbox.io/vim-jp/better_K_for_neovim_lua
 local function lua_help()
 	if vim.bo.filetype ~= 'lua' then
@@ -123,40 +117,17 @@ capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 --- }}}
 
 --- mason lspconfig {{{
-mason_lspconfig.setup_handlers({
-	function(server_name)
-		lspconfig[server_name].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-	end,
-	['lua_ls'] = function()
-		lspconfig.lua_ls.setup({
-			on_attach = on_attach,
-			settings = {
-				Lua = {
-					diagnostics = { globals = { 'vim' } },
-				},
-			},
-		})
-	end,
-
-	['tsserver'] = function()
-		lspconfig.tsserver.setup({
-			on_attach = on_attach,
-			filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
-			cmd = { 'typescript-language-server', '--stdio' },
-			settings = {
-				format = { enable = false },
-			},
-		})
-	end,
-	['eslint'] = function()
-		lspconfig.tsserver.setup({
-			settings = {
-				format = { enable = true },
-			},
-		})
-	end,
+mason_lspconfig.setup({
+	ensure_installed = {
+		'lua_ls',
+		'ts_ls',
+		'eslint',
+	},
+	automatic_installation = true,
 })
 --- }}}
+
+vim.lsp.config("*", {
+	on_attach = on_attach,
+	capabilities = capabilities,
+})

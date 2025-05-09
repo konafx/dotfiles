@@ -535,7 +535,7 @@ lazy.setup({
 		}
 	},
 
-	-- colorscheme
+	-- clorscheme
 	{
 		'EdenEast/nightfox.nvim',
 		'arcticicestudio/nord-vim',
@@ -543,6 +543,11 @@ lazy.setup({
 		'sainnhe/gruvbox-material',
 		'AlexvZyl/nordic.nvim',
 		'RRethy/nvim-base16',
+		{
+			'catppuccin/nvim', name = 'catppuccin',
+		},
+		lazy = false,
+		priority = 1000
 	}
 }, {
 	defaults = {
@@ -552,4 +557,4 @@ lazy.setup({
 
 -- colorscheme
 vim.opt.background = 'dark'
-vim.cmd([[colorscheme nordic]])
+vim.cmd.colorscheme('nordic')
