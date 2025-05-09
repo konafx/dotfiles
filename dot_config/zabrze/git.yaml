@@ -25,6 +25,26 @@ abbrevs:
     context: *subcommand
     # }}}
 
+    # git restore {{{
+  - name: git restore
+    abbr-pattern: ^re?s$
+    snippet: restore
+    global: true
+    context: *subcommand
+
+  - name: ress
+    abbr-pattern: ^re?ss$
+    snippet: restore --staged
+    global: true
+    context: *subcommand
+
+  - name: --staged
+    abbr: s
+    snippet: --staged
+    global: true
+    context: '^git\s+restore\s'
+    #}}}
+
     # git diff {{{
   - name: git diff
     abbr: d
@@ -37,6 +57,12 @@ abbrevs:
     snippet: diff --staged
     global: true
     context: *subcommand
+
+  - name: --staged
+    abbr: s
+    snippet: --staged
+    global: true
+    context: '^git\s+diff\s'
     # }}}
 
     # git commit {{{
