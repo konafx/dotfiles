@@ -546,8 +546,6 @@ lazy.setup({
 		{
 			'catppuccin/nvim', name = 'catppuccin',
 		},
-		lazy = false,
-		priority = 1000
 	}
 }, {
 	defaults = {
@@ -556,5 +554,5 @@ lazy.setup({
 })
 
 -- colorscheme
-vim.opt.background = 'dark'
-vim.cmd.colorscheme('nordic')
+vim.opt.background = 'light'
+vim.cmd.colorscheme('catppuccin-latte')
