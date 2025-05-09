@@ -8,19 +8,19 @@ abbrevs:
     snippet: chezmoi
 
   - name: chezmoi edit
-    abbr-pattern: ^ed?i?$
+    abbr-pattern: ^ed?$
     snippet: edit
     global: true
     context: *subcommand
 
   - name: chezmoi status
-    abbr-pattern: ^st?a?$
+    abbr-pattern: ^st?$
     snippet: status
     global: true
     context: *subcommand
 
   - name: chezmoi apply
-    abbr-pattern: ^app?l?$
+    abbr-pattern: ^app?$
     snippet: apply
     global: true
     context: *subcommand
