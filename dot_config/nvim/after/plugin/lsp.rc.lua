@@ -75,10 +75,16 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set('n', '[lsp][', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', bufopts)
 	vim.keymap.set('n', '[lsp]]', '<Cmd>Lspsaga diagnostic_jump_next<CR>', bufopts)
 	vim.keymap.set('n', '[lsp]e', '<Cmd>Lspsaga show_cursor_diagnostics<CR>', bufopts)
-	vim.keymap.set('n', '[lsp]D', vim.lsp.buf.declaration, bufopts)
-	vim.keymap.set('n', '[lsp]<C-d>', vim.lsp.buf.definition, bufopts)
+
+	-- Definitions
 	vim.keymap.set('n', '[lsp]d', '<Cmd>Lspsaga peek_definition<CR>', bufopts)
-	vim.keymap.set('n', '[lsp]i', vim.lsp.buf.implementation, bufopts)
+	vim.keymap.set('n', '[lsp]D', vim.lsp.buf.definition, bufopts)
+	vim.keymap.set('n', '[lsp]<C-d>', vim.lsp.buf.definition, bufopts)
+
+	-- Implementations
+	vim.keymap.set('n', '[lsp]i', '<Cmd>Lspsaga finder imp<CR>', bufopts)
+	vim.keymap.set('n', '[lsp]I', vim.lsp.buf.implementation, bufopts)
+
 	vim.keymap.set('n', '[lsp]f', '<Cmd>Lspsaga lsp_finder<CR>', bufopts)
 	vim.keymap.set('n', 'K', function() -- https://scrapbox.io/vim-jp/better_K_for_neovim_lua
 		if not lua_help() then
@@ -120,8 +126,6 @@ capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 mason_lspconfig.setup({
 	ensure_installed = {
 		'lua_ls',
-		'ts_ls',
-		'eslint',
 	},
 	automatic_installation = true,
 })
