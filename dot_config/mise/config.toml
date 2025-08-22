@@ -10,8 +10,8 @@ fzf = "latest"
 uv = "latest"
 "pipx:tldr" = "latest"
 pnpm = "10.9.0"
-duckdb = "latest"
 "npm:@devcontainers/cli" = "latest"
+"ubi:duckdb/duckdb" = "latest"
 
 [settings]
 experimental = true
