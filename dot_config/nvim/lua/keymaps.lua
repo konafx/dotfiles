@@ -86,8 +86,9 @@ keymap.set('n', 'm', '[motion]', { remap = true })
 -- }}}
 
 -- [lsp] {{{
-keymap.set('', '[lsp]', '<Nop>')
-keymap.set('n', ']', '[lsp]', { remap = true })
+-- keymap.set('', '[lsp]', '<Nop>')
+-- keymap.set('n', ']', '<Nop>')
+-- keymap.set('n', ']', '[lsp]', { remap = true })
 -- }}}
 
 -- [term] {{{

@@ -4,12 +4,6 @@ if not ok then
 	return
 end
 
-local ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
-if not ok then
-	print('mson-lspconfig is not installed')
-	return
-end
-
 -- https://scrapbox.io/vim-jp/better_K_for_neovim_lua
 local function lua_help()
 	if vim.bo.filetype ~= 'lua' then
@@ -53,39 +47,30 @@ end
 -- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 --- }}}
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
-	-- format on save
-	-- use null-ls format instead here
-	-- if client.server_capabilities.documentFormattingProvider then
-	--   vim.api.nvim_create_autocmd("BufWritePre", {
-	--     group = vim.api.nvim_create_augroup("Format", { clear = true }),
-	--     buffer = bufnr,
-	--     callback = function() vim.lsp.buf.format({ async = true }) end
-	--   })
-	-- end
-
-	-- Enable completion triggered by <c-x><c-o>
-	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
+-- AuthCmd: LspAttach {{{
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('mylspconfig', {}),
+  callback = function(args)
 	-- Mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
+	local bufnr = args.bufnr
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
-	vim.keymap.set('n', '[lsp][', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', bufopts)
-	vim.keymap.set('n', '[lsp]]', '<Cmd>Lspsaga diagnostic_jump_next<CR>', bufopts)
-	vim.keymap.set('n', '[lsp]e', '<Cmd>Lspsaga show_cursor_diagnostics<CR>', bufopts)
+	vim.keymap.set('n', '][', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', bufopts)
+	vim.keymap.set('n', ']]', '<Cmd>Lspsaga diagnostic_jump_next<CR>', bufopts)
+	vim.keymap.set('n', ']e', '<Cmd>Lspsaga show_cursor_diagnostics<CR>', bufopts)
 
 	-- Definitions
-	vim.keymap.set('n', '[lsp]d', '<Cmd>Lspsaga peek_definition<CR>', bufopts)
-	vim.keymap.set('n', '[lsp]D', vim.lsp.buf.definition, bufopts)
-	vim.keymap.set('n', '[lsp]<C-d>', vim.lsp.buf.definition, bufopts)
+	vim.keymap.set('n', ']d', '<Cmd>Lspsaga peek_definition<CR>', bufopts)
+	--vim.keymap.set('n', ']d', '<Cmd>Lspsaga peek_definition<CR>', bufopts)
+	vim.keymap.set('n', ']D', vim.lsp.buf.definition, bufopts)
+	vim.keymap.set('n', ']<C-d>', vim.lsp.buf.definition, bufopts)
 
 	-- Implementations
-	vim.keymap.set('n', '[lsp]i', '<Cmd>Lspsaga finder imp<CR>', bufopts)
-	vim.keymap.set('n', '[lsp]I', vim.lsp.buf.implementation, bufopts)
+	vim.keymap.set('n', ']i', '<Cmd>Lspsaga finder imp<CR>', bufopts)
+	vim.keymap.set('n', ']I', vim.lsp.buf.implementation, bufopts)
 
-	vim.keymap.set('n', '[lsp]f', '<Cmd>Lspsaga lsp_finder<CR>', bufopts)
+	vim.keymap.set('n', ']f', '<Cmd>Lspsaga finder<CR>', bufopts)
+
 	vim.keymap.set('n', 'K', function() -- https://scrapbox.io/vim-jp/better_K_for_neovim_lua
 		if not lua_help() then
 			require('lspsaga.hover'):render_hover_doc()
@@ -98,20 +83,36 @@ local on_attach = function(client, bufnr)
 	-- vim.keymap.set('n', '<space>wl', function()
 	--   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 	-- end, bufopts)
-	-- vim.keymap.set('n', '[lsp]tD', vim.lsp.buf.type_definition, bufopts)
+	-- vim.keymap.set('n', ']tD', vim.lsp.buf.type_definition, bufopts)
 	-- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-	vim.keymap.set('n', '[lsp]r', '<Cmd>Lspsaga rename<CR>', bufopts)
+	vim.keymap.set('n', ']r', '<Cmd>Lspsaga rename<CR>', bufopts)
 	-- vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-	vim.keymap.set('n', '[lsp]c', '<Cmd>Lspsaga code_action<CR>', bufopts)
-	-- vim.keymap.set('n', '[lsp]r', vim.lsp.buf.references, bufopts)
+	vim.keymap.set('n', ']c', '<Cmd>Lspsaga code_action<CR>', bufopts)
+	-- vim.keymap.set('n', ']r', vim.lsp.buf.references, bufopts)
 	-- vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
-	vim.keymap.set('n', '[lsp]F', function()
+	vim.keymap.set('n', ']F', function()
 		vim.lsp.buf.format({ async = true })
 	end)
-end
---- }}}
 
--- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers.. {{{
+    -- Auto-format ("lint") on save.
+    -- Usually not needed if server supports "textDocument/willSaveWaitUntil".
+    -- ocal client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+    -- if not client:supports_method('textDocument/willSaveWaitUntil')
+    --     and client:supports_method('textDocument/formatting') then
+    --   vim.api.nvim_create_autocmd('BufWritePre', {
+    --     group = vim.api.nvim_create_augroup('my.lsp', {clear=false}),
+    --     buffer = args.buf,
+    --     callback = function()
+    --       vim.lsp.buf.format({ bufnr = args.buf, id = client.id, timeout_ms = 1000 })
+    --     end,
+    --   })
+    -- end
+  end,
+})
+-- }}}
+
+-- Capacibilites {{{
+-- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers...
 local ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
 if not ok then
 	print('cmp-nvim-lsp is not installed')
@@ -120,18 +121,19 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
---- }}}
+-- }}}
 
---- mason lspconfig {{{
+-- mason lspconfig {{{
+local ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
+if not ok then
+	print('mson-lspconfig is not installed')
+	return
+end
+
 mason_lspconfig.setup({
 	ensure_installed = {
 		'lua_ls',
 	},
 	automatic_installation = true,
 })
---- }}}
-
-vim.lsp.config("*", {
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
+-- }}}

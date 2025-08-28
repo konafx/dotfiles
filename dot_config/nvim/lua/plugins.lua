@@ -68,21 +68,14 @@ lazy.setup({
 		-- todo: add <Plug>(fern-*) ※いまは:Fernのみ
 	},
 
-	-- lsp manager
-	{
-		'williamboman/mason.nvim',
-		lazy = false,
-		priority = 100, -- lsp, null-ls両方の依存先なので早めにload
-		config = true,
-	},
-
 	-- lsp
 	{
-		'neovim/nvim-lspconfig',
-		lazy = false,
+		'mason-org/mason-lspconfig.nvim',
+		priority = 100, -- lsp, null-ls両方の依存先なので早めにload
+		opts = {},
 		dependencies = {
-			'williamboman/mason-lspconfig.nvim',
-			-- 'williamboman/mason.nvim',
+			{ 'mason-org/mason.nvim', opts = {} },
+			'neovim/nvim-lspconfig',
 		}
 	},
 
