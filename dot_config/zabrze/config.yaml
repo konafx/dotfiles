@@ -7,17 +7,31 @@ abbrevs:
     abbr: ..
     snippet: cdr ../
 
-  - name: ll
-    abbr: ll
-    snippet: ls -l
+    # ls to eza {{{
+  - name: l
+    abbr: l
+    snippet: eza -blF
+
+  - name: ls
+    abbr: ls
+    snippet: eza --git --group-directories-first
 
   - name: la
     abbr: la
-    snippet: ls -a
+    snippet: eza -a
+
+  - name: ll
+    abbr: ll
+    snippet: eza -l
 
   - name: lla
     abbr: lla
-    snippet: ls -la
+    snippet: eza -labghimu
+
+  - name: tree
+    abbr: tree
+    snippet: eza --tree
+    # }}}
 
     # historyに日付を表示
   - name: h
@@ -60,6 +74,7 @@ abbrevs:
     global: true
     context: '^docker\s+'
     # }}}
+
 
     # suffix {{{
   - name: '>/dev/null 2>&1'

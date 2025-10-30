@@ -96,7 +96,8 @@ zinit wait"1c" lucid \
 	@zsh-users/zsh-completions \
 	@zsh-users/zsh-autosuggestions \
 	@zsh-users/zaw \
-	@zdharma-continuum/history-search-multi-word
+	@zdharma-continuum/history-search-multi-word \
+	atload"source $ZRCDIR/pluginconfig/gh_atload.zsh"
 
 # minimum propmt
 zinit \
@@ -111,17 +112,6 @@ zinit wait"2z" blockf light-mode \
 	Ryooooooga/zabrze
 
 # program {{{
-# zinit pack-ice requires `jq`
-zinit wait"0a" lucid \
-	from"gh-r" sbin"* -> jq" nocompile \
-	for @jqlang/jq
-
-# alt `ls`, `tree`
-zinit wait"1" lucid \
-	from"gh-r" aliases \
-	atload"source $ZRCDIR/pluginconfig/eza_atload.zsh" \
-	lbin"!" \
-	light-mode for @eza-community/eza
 
 # enhanced `cd`
 zinit wait"1c" lucid \
@@ -131,40 +121,7 @@ zinit wait"1c" lucid \
 	src"init.zsh" nocompile"!" lbin"!" \
 	light-mode for @ajeetdsouza/zoxide
 
-# git repository manager
-zinit wait"0c" lucid \
-	from"gh-r" mv"ghq* -> ghq" sbin"ghq" \
-	cp"misc/zsh/_ghq -> _ghq" \
-	light-mode for @x-motemen/ghq
-
-# alt `find`
-zinit wait"1c" lucid \
-	blockf nocompletions \
-	from"gh-r" mv"fd* -> fd" \
-	sbin"fd/fd" \
-	atclone'
-		chown -R $(id -nu):$(id -nu) .;
-		zinit creinstall -q sharkdp/fd;' \
-	for @sharkdp/fd
-
-# alt `cat`
-zinit wait"1c" lucid \
-	blockf nocompletions nocompile aliases \
-	from"gh-r" mv"bat* -> bat" \
-	sbin"bat/bat" cp"bat/autocomplete/bat.zsh -> _bat" \
-	atclone'
-		chown -R $(id -nu):$(id -nu) .;
-		zinit creinstall -q sharkdp/bat;' \
-	atload"source $ZRCDIR/pluginconfig/bat_atload.zsh" \
-	for @sharkdp/bat
-
-# alt `grep`
-zinit wait"1c" lucid \
-	blockf completions \
-	from"gh-r" mv"ripgrep* -> rg" \
-	sbin"rg/rg" \
-	for @BurntSushi/ripgrep
-
+# github-cli
 zinit wait"1c" lucid \
 	blockf nocompletions \
 	from"gh-r" \
@@ -173,7 +130,6 @@ zinit wait"1c" lucid \
 	atclone'
 		mkdir -p $ZPFX/man/man1;
 		cp -vf gh/share/man/man1/* $ZPFX/man/man1;' \
-	atload"source $ZRCDIR/pluginconfig/gh_atload.zsh" \
 	for @cli/cli
 
 # tmux plugin manager
@@ -184,8 +140,6 @@ zinit wait lucid \
 		ln -sf \$ZINIT[PLUGINS_DIR]/tpm \$XDG_DATA_HOME/tmux/plugins/tpm;" \
 	atpull'%atclone' \
 	for @tmux-plugins/tpm
-
-zinit wait"2" pack"bgn" for fzf
 
 ### End of program }}}
 
@@ -203,6 +157,7 @@ autoload -U +X bashcompinit && bashcompinit
 
 # fzf
 # export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+
 # awscli
 complete -C '/usr/local/bin/aws_completer' aws
 
