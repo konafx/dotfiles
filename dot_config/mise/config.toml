@@ -15,9 +15,14 @@ yarn = "latest"
 "pipx:tldr" = "latest"
 "npm:@devcontainers/cli" = "latest"
 "ubi:duckdb/duckdb" = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"
+"npm:ccusage" = "latest"
 
 [settings]
 experimental = true
 
 [settings.pipx]
 uvx = true
+
+[settings.npm]
+bun = true

@@ -33,6 +33,8 @@ export ZDOTDIR="$HOME"/.config/zsh
 ```
 
 ### zinit
+Auto installed
+
 zsh plugin manager
 [zdharma-continuum/zinit: 🌻 Flexible and fast ZSH plugin manager](https://github.com/zdharma-continuum/zinit)
 

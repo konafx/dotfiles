@@ -5,3 +5,5 @@
 
 # git worktree
 .worktree
+
+**/.claude/settings.local.json

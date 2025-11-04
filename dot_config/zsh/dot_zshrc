@@ -96,8 +96,7 @@ zinit wait"1c" lucid \
 	@zsh-users/zsh-completions \
 	@zsh-users/zsh-autosuggestions \
 	@zsh-users/zaw \
-	@zdharma-continuum/history-search-multi-word \
-	atload"source $ZRCDIR/pluginconfig/gh_atload.zsh"
+	@zdharma-continuum/history-search-multi-word
 
 # minimum propmt
 zinit \
@@ -130,6 +129,7 @@ zinit wait"1c" lucid \
 	atclone'
 		mkdir -p $ZPFX/man/man1;
 		cp -vf gh/share/man/man1/* $ZPFX/man/man1;' \
+	atload"source $ZRCDIR/pluginconfig/gh_atload.zsh" \
 	for @cli/cli
 
 # tmux plugin manager
