@@ -40,6 +40,10 @@ export ZRCDIR=$ZHOMEDIR/rc
 export GOPATH="${GOPATH:-$XDG_DATA_HOME/go}"
 # End of Golang }}}
 
+# FCITX {{{
+export FCITX_CONFIG_DIR="${FCITX_CONFIG_DIR:-$XDG_CONFIG_HOME/fcitx}"
+# }}}
+
 # Local bin dir {{{
 export LOCAL_BIN_DIR="$HOME/.local/bin"
 # End of Local bin dir }}}

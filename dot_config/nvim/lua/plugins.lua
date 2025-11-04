@@ -495,6 +495,16 @@ lazy.setup({
 		enabled = false,
 	},
 
+	-- Obsidian
+	{
+		'epwalsh/obsidian.nvim',
+		lazy = false,
+		ft = "markdown",
+		dependencies = {
+			"nvim-lua/plenary.nvim"
+		},
+	},
+
 	-- CheatSheet
 	{
 		'reireias/vim-cheatsheet',
