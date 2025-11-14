@@ -36,6 +36,10 @@ export ZCACHEDIR=$XDG_CACHE_HOME/zsh
 export ZRCDIR=$ZHOMEDIR/rc
 # End of Zsh Base Directory }}}
 
+# Claude Code {{{
+export CLAUDE_CONFIG_DIR="${CLAUDE_CONFIG_DIR:-$XDG_CONFIG_HOME/claude}"
+# End of Claude Code }}}
+
 # Golang {{{
 export GOPATH="${GOPATH:-$XDG_DATA_HOME/go}"
 # End of Golang }}}

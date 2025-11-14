@@ -156,6 +156,7 @@ lazy.setup({
 				ensure_installed = { 'prettier', 'stylua' },
 				automatic_installation = false,
 				automatic_setup = true,
+				handlers = {},
 			})
 			require('null-ls').setup({
 				capabilities = vim.lsp.protocol.make_client_capabilities(),

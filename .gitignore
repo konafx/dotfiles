@@ -1,2 +1,4 @@
 packer_compiled.lua
 config/tmux/plugins
+
+.serena
