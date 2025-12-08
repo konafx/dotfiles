@@ -75,7 +75,6 @@ abbrevs:
     context: '^docker\s+'
     # }}}
 
-
     # suffix {{{
   - name: '>/dev/null 2>&1'
     abbr: 'null'
