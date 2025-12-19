@@ -75,6 +75,12 @@ abbrevs:
     context: '^docker\s+'
     # }}}
 
+    # runtime
+  - name: uv run python *.py
+    abbr-pattern: ^(?<file>.+\.py)$
+    snippet: uv run python $file
+    evaluate: true
+
     # suffix {{{
   - name: '>/dev/null 2>&1'
     abbr: 'null'

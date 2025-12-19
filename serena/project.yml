@@ -1,0 +1,55 @@
+# ============================================================
+# Serena Project Configuration Template
+#
+# Design principles:
+# - Use Serena ONLY for structural code operations (LSP-backed)
+# - Delegate reasoning, memory, planning, and summarization
+#   to Claude Code itself
+# - Minimize token usage by excluding thinking & memory tools
+# ============================================================
+
+project_name: "__PROJECT_NAME__"
+
+languages:
+  - __LANG__
+
+encoding: "utf-8"
+
+# Respect .gitignore to reduce scan scope and token usage
+ignore_all_files_in_gitignore: true
+
+ignored_paths: []
+
+# Set to true for review / read-only sessions
+read_only: false
+
+# ------------------------------------------------------------
+# Tool exclusions for token efficiency & responsibility split
+# ------------------------------------------------------------
+excluded_tools:
+  # Memory management (handled by Claude Code / humans)
+  - write_memory
+  - read_memory
+  - list_memories
+  - delete_memory
+
+  # Project onboarding & initialization
+  - onboarding
+  - initial_instructions
+  - check_onboarding_performed
+
+  # Thinking tools (major token consumers)
+  - think_about_collected_information
+  - think_about_task_adherence
+  - think_about_whether_you_are_done
+
+  # Optional: summarization & session prep
+  - summarize_changes
+  - prepare_for_new_conversation
+
+# No system-level instructions here;
+# Claude Code's system prompt is authoritative
+initial_prompt: ""
+
+included_optional_tools: []
+

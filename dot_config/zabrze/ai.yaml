@@ -2,3 +2,7 @@ abbrevs:
   - name: cc-sdd
     abbr-pattern: ^(?:cc)?-?sdd$
     snippet: bunx cc-sdd@latest --lang ja
+
+  - name: difit
+    abbr: difit
+    snippet: bunx difit
