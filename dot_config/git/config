@@ -1,5 +1,5 @@
 [user]
-    name = konafx
+    name = noize
     # email = 
 [alias]
     graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cn %Cred%d %Creset%s'
@@ -38,7 +38,7 @@
 	# default
     root = ~/repos
 [github]
-    user = konafx
+    user = noize
 [core]
     editor = nvim
     whitespace = cr-at-eol
