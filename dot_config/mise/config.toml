@@ -17,6 +17,7 @@ yarn = "latest"
 "ubi:duckdb/duckdb" = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:ccusage" = "latest"
+task = "latest"
 
 [settings]
 experimental = true
